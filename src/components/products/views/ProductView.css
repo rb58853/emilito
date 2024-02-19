@@ -1,0 +1,124 @@
+.product_view {
+    display: flex;
+    gap: 50px;
+    place-content: center;
+    /* place-items: center; */
+    background-color: rgb(255, 238, 0);
+    width: 90vw;
+    height: 70vh;
+
+    /* margin-top: 10%; */
+}
+
+.name {
+    margin-bottom: 0px;
+}
+
+.price_view {
+    margin-top: 0px;
+    /* margin-bottom: 0px; */
+}
+
+.box_images {
+    margin-top: 7vh;
+    display: flex;
+    background-color: rgba(65, 255, 40, 0.466);
+    width: 50vh;
+    max-width: 41vw;
+    height: 80%;
+    min-height: 50vh;
+    place-content: center;
+    place-items: center;
+}
+
+.box_images>* {
+    width: 100%;
+}
+
+.points {
+    display: flex;
+    place-content: center;
+}
+
+.image_container_view {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    max-width: 100%;
+    max-height: 60%;
+    background-color: rgb(255, 0, 0);
+}
+
+.box_info {
+    background-color: blue;
+    width: 50%;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    position: relative;
+}
+
+.scrollable {
+    background-color: rgb(255, 166, 0);
+    overflow: auto;
+    height: 69%;
+    margin-bottom: 0px;
+}
+
+.add_bag {
+    border: solid 1px black;
+    color: black;
+    text-decoration: none;
+    height: fit-content;
+    padding: 7px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 100px;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add_count {
+    border: solid 1px black;
+    width: fit-content;
+    padding: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    line-height: 1;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.add_space {
+    display: flex;
+    gap: 10px;
+    background-color: blanchedalmond;
+}
+
+.add_space>* {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.text_block {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.text_block>* {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

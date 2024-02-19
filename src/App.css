@@ -4,6 +4,8 @@
   text-align: left;
   /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   /* display: flex; */
+  background-color: #61dafb;
+  /* height: 100%; */
 }
 
 .App-header {

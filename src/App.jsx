@@ -1,13 +1,14 @@
 import './App.css';
-import Marketplace from './components/marketplace/Marketplace';
+import FullContainer from './components/FullContainer';
 import TopBars from './components/bars/TopBars';
 import BottomBar from './components/bars/BottomBar';
+import ProductView from './components/products/views/ProductView';
 
 function App() {
   return <div className="App">
-    <TopBars/>
-    <Marketplace/>
-    <BottomBar/>
+    <TopBars />
+    <FullContainer />
+    <BottomBar />
   </div>;
 }
 

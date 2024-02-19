@@ -1,0 +1,9 @@
+.full-container{
+    /* display: flex; */
+    /* place-content: center; */
+    /* place-items: center; */
+    margin-top: 70px;
+    margin-bottom: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
