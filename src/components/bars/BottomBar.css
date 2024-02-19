@@ -1,0 +1,31 @@
+.bottom_bar {
+    position: fixed;
+    display: flex;
+    place-content: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 10;
+    bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.bottom_bar>* {
+    margin-right: 5px;
+}
+
+.links{
+    display: flex;
+    gap: 20px;
+}
+.links>* {
+    text-decoration: none;
+    color:black;
+}
+.copyright{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    display: flex;
+    place-content: center;
+}

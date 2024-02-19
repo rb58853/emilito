@@ -1,0 +1,33 @@
+.box-product {
+    background-color: rgba(0, 0, 0, 0.041);
+    text-align: center;
+    transition: transform ease-in-out 0.15s;
+}
+
+.box-product.zoom {
+    transform: scale(1.1);
+}
+
+.image_container{
+    background-color: rgba(0, 0, 0, 0.11);
+    height: 140px;
+    width: 210px;
+}
+
+.image {
+    position: relative;
+    border-radius: 5px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.info_container{
+    background-color: white;
+    padding: 10px;
+}
+
+.info_container>* {
+    margin-top: 0%;
+    margin-bottom: 0px;
+    pointer-events: none;
+}

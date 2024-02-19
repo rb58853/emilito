@@ -3,14 +3,15 @@ import './PrincipalBar.css';
 const PrincipalBar = () => {
     return (
         <div className="bar">
-            <div className="navbar-content">
-                <div className="navbar-logo">
-                    <a href="/home">
-                        <img className="logo_image" src="logo512.png" alt="" />
-                    </a>
+            <a href="/login">
+                <div className='shop-buttom'>
+                    <img  href="/menu" src="logo192.png" />
+                    <img className='red-point' href="/menu" src="logo192.png" />
                 </div>
-                <a className='login-buttom' href="/login">Log in</a>
-            </div>
+            </a>
+            <a href="/menu">
+                <img className='menu_buttom' href="/menu" src="logo192.png" />
+            </a>
         </div>
     );
 };
