@@ -26,9 +26,9 @@
     width: 50vh;
     max-width: 41vw;
     height: 80%;
-    min-height: 50vh;
     place-content: center;
     place-items: center;
+    min-width: 30vh;
 }
 
 .box_images>* {
@@ -38,9 +38,24 @@
 .points {
     display: flex;
     place-content: center;
+    place-items: center;
+    align-items: center;
+    /* background-color: rgb(255, 0, 234); */
+    max-height: 20px;
+    gap: 5px;
+}
+
+.point {
+    height: 7px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
 }
 
 .image_container_view {
+    position: relative;
     display: flex;
     aspect-ratio: 1 / 1;
     place-content: center;
@@ -48,10 +63,12 @@
     width: 100%;
     max-width: 100%;
     max-height: 60%;
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.034);
 }
 
 .box_info {
+    display: flex;
+    flex-direction: column;
     background-color: blue;
     width: 50%;
     margin-top: 7vh;
@@ -59,11 +76,19 @@
     position: relative;
 }
 
+.scrollable_container {
+    position: relative;
+    /* background-color: rgb(212, 0, 255); */
+    width: 100%;
+    flex-grow: 1;
+}
+
 .scrollable {
-    background-color: rgb(255, 166, 0);
+    position: absolute;
+    /* background-color: rgb(255, 166, 0); */
     overflow: auto;
-    height: 69%;
-    margin-bottom: 0px;
+    bottom: 0px;
+    top: 0px;
 }
 
 .add_bag {
@@ -105,7 +130,7 @@
 .add_space {
     display: flex;
     gap: 10px;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
 }
 
 .add_space>* {
@@ -121,4 +146,61 @@
 .text_block>* {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.left_to_click {
+    /* background-color: blueviolet; */
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.right_to_click {
+    /* background-color: rgb(43, 226, 211); */
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.image_view,
+.image_view_hide {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.image_view_hide {
+    opacity: 0;
+}
+
+.fade_in{
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.fade_out{
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
