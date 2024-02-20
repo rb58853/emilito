@@ -2,19 +2,19 @@ import './ProductView.css'
 import React, { useState } from 'react';
 
 function ChangeImage(index, set_current, set_last, current) {
-        var current_image = document.getElementById('current')
-        var last_image = document.getElementById('last')
+    var current_image = document.getElementById('current')
+    var last_image = document.getElementById('last')
 
-        current_image.addEventListener('animationend', function () {
-            this.classList.remove('fade_in');
-        })
-        current_image.classList.add('fade_in')
-        last_image.addEventListener('animationend', function () {
-            this.classList.remove('fade_out');
-        })
-        last_image.classList.add('fade_out')
-        set_last(current)
-        set_current(index)
+    current_image.addEventListener('animationend', function () {
+        this.classList.remove('fade_in');
+    })
+    current_image.classList.add('fade_in')
+    last_image.addEventListener('animationend', function () {
+        this.classList.remove('fade_out');
+    })
+    last_image.classList.add('fade_out')
+    set_last(current)
+    set_current(index)
 
 }
 
@@ -22,16 +22,20 @@ function Point({ index, current_image, set_current, set_last }) {
     let [highlight, set_highlight] = useState(false)
     return (
         <div>
-            <img className="point"
+            <img
                 onMouseEnter={() => set_highlight(true)}
                 onMouseLeave={() => set_highlight(false)}
                 onClick={() => ChangeImage(index, set_current, set_last, current_image)}
+
+                className={`point ${(highlight || index == current_image) ? 'highlight' : ""}`}
+
                 src={(highlight || index == current_image) ? "images/icons/Black_Circle.png" : "images/icons/White_Circle.png"} alt="" />
         </div>
     )
 }
 
 function ProductView({ product }) {
+    let [add_highlight, set_add_highlight] = useState(false)
     let [current_image, set_current] = useState(0)
     let [last_image, set_last] = useState(0)
     let images = product.images
@@ -79,7 +83,11 @@ function ProductView({ product }) {
                 <h1 className='name'> {product.name} </h1>
                 <p className='price_view'>{"$" + product.price} </p>
                 <div className='add_space'>
-                    <p className='add_bag'>Add to bag</p>
+                    <button
+
+                        className={'add_bag'}>
+                        Add to bag
+                    </button>
                     <p className='add_count'>1</p>
                 </div>
                 <div className='scrollable_container'>
