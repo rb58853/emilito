@@ -2,7 +2,6 @@ import './ProductView.css'
 import BlurGradient from '../../utils/blurGradient';
 import React, { useState } from 'react';
 
-
 function ChangeImage(index, set_current, set_last, current) {
     var current_image = document.getElementById('current')
     var last_image = document.getElementById('last')
@@ -36,81 +35,117 @@ function Point({ index, current_image, set_current, set_last }) {
     )
 }
 
-function ProductView({ product }) {
-    let [add_over, set_add_over] = useState(false)
-    let [current_image, set_current] = useState(0)
+function ImageComponent({ product }) {
+    const [current_image, set_current] = useState(0)
     let [last_image, set_last] = useState(0)
     let images = product.images
     let points = Array.from({ length: images.length }, (_, i) =>
         <Point index={i} current_image={current_image} set_current={set_current} set_last={set_last} />)
 
     return (
-        <div className='product_view'>
-            <div className='box_images'>
-                <div>
-                    <div className='image_container_view'>
-                        <img id='current'
-                            className='image_view'
-                            src={images[current_image]}
-                            alt="" />
+        <div className='box_images'>
+            <div>
+                <div className='image_container_view'>
+                    <img id='current'
+                        className='image_view'
+                        src={images[current_image]}
+                        alt="" />
 
-                        <img id='last'
-                            className='image_view_hide'
-                            src={images[last_image]}
-                            alt="" />
+                    <img id='last'
+                        className='image_view_hide'
+                        src={images[last_image]}
+                        alt="" />
 
 
-                        <div className='right_to_click'
-                            onClick={() => ChangeImage((current_image + 1) % images.length, set_current, set_last, current_image)}
-                        >
-                        </div>
-                        <div className='left_to_click'
-                            onClick={() => {
-                                if (current_image > 0)
-                                    ChangeImage(current_image - 1, set_current, set_last, current_image)
-                                else
-                                    ChangeImage(images.length - 1, set_current, set_last, current_image)
-                            }
-                            }
-                        >
-                        </div>
+                    <div className='right_to_click'
+                        onClick={() => ChangeImage((current_image + 1) % images.length, set_current, set_last, current_image)}
+                    >
                     </div>
-                    <div className='points'>
-                        {points}
+                    <div className='left_to_click'
+                        onClick={() => {
+                            if (current_image > 0)
+                                ChangeImage(current_image - 1, set_current, set_last, current_image)
+                            else
+                                ChangeImage(images.length - 1, set_current, set_last, current_image)
+                        }
+                        }
+                    >
                     </div>
                 </div>
+                <div className='points'>
+                    {points}
+                </div>
             </div>
+        </div>
+    );
+}
+
+
+/**
+*@param {boolean} top define si se usara difusion en la parte superior 
+*@param {boolean} bottom define si se usara difusion en la parte inferior 
+*@returns {React.JSX.Element}
+*/
+function Vinnete({ top = false, bottom = false }) {
+    return (<div>
+
+        {top && <div className='top-vinnete'></div>}
+        {bottom && <div className='bottom-vinnete'></div>}
+    </div>
+    );
+}
+
+function Scrollable({ product }) {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isScrollable, setIsScrollable] = useState(true);
+
+    const handleScroll = (e) => {
+        const { scrollTop, scrollHeight, clientHeight } = e.target;
+        const position = Math.ceil(
+            (scrollTop / (scrollHeight - clientHeight)) * 100
+        );
+        setScrollPosition(position);
+        setIsScrollable(scrollHeight > clientHeight && position<99)
+    };
+
+    return (
+        <div className='scrollable_container'>
+            <Vinnete top={scrollPosition>0} bottom={isScrollable} />
+            <div id='scrollable' className='scrollable'
+                onScroll={handleScroll}
+            >
+                <div className='text_block'>
+                    <p> {product.support} </p>
+                    <p>{product.dimension}</p>
+                </div>
+                <div className='text_block'>
+                    <p> Limited edition of {product.limited} </p>
+                    <p>{product.signed}</p>
+                </div>
+                <div className='text_block'>
+                    <p> {product.description} </p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function ProductView({ product }) {
+    return (
+        <div className='product_view'>
+            <ImageComponent product={product} />
 
             <div className='box_info'>
                 <h1 className='name'> {product.name} </h1>
                 <p className='price_view'>{"$" + product.price} </p>
                 <div className='add_space'>
                     <button
-                        onMouseEnter={() => set_add_over(true)}
-                        onMouseLeave={() => set_add_over(false)}
-                        className={`add_bag ${add_over ? 'over' : ''}`}>
+                        className='add_bag'>
                         Add to bag
                     </button>
                     <p className='add_count'>1</p>
                 </div>
-                <div className='scrollable_container'>
-                    <div className='top-vinnete'></div>
-                    <div className='top-blur'></div>
-                    <div className='bottom-vinnete'></div>
-                    <div className='scrollable'>
-                        <div className='text_block'>
-                            <p> {product.support} </p>
-                            <p>{product.dimension}</p>
-                        </div>
-                        <div className='text_block'>
-                            <p> Limited edition of {product.limited} </p>
-                            <p>{product.signed}</p>
-                        </div>
-                        <div className='text_block'>
-                            <p> {product.description} </p>
-                        </div>
-                    </div>
-                </div>
+                <Scrollable product={product} />
             </div>
         </div >
     );
