@@ -1,5 +1,7 @@
 import './ProductView.css'
+import BlurGradient from '../../utils/blurGradient';
 import React, { useState } from 'react';
+
 
 function ChangeImage(index, set_current, set_last, current) {
     var current_image = document.getElementById('current')
@@ -35,7 +37,7 @@ function Point({ index, current_image, set_current, set_last }) {
 }
 
 function ProductView({ product }) {
-    let [add_highlight, set_add_highlight] = useState(false)
+    let [add_over, set_add_over] = useState(false)
     let [current_image, set_current] = useState(0)
     let [last_image, set_last] = useState(0)
     let images = product.images
@@ -84,13 +86,17 @@ function ProductView({ product }) {
                 <p className='price_view'>{"$" + product.price} </p>
                 <div className='add_space'>
                     <button
-
-                        className={'add_bag'}>
+                        onMouseEnter={() => set_add_over(true)}
+                        onMouseLeave={() => set_add_over(false)}
+                        className={`add_bag ${add_over ? 'over' : ''}`}>
                         Add to bag
                     </button>
                     <p className='add_count'>1</p>
                 </div>
                 <div className='scrollable_container'>
+                    <div className='top-vinnete'></div>
+                    <div className='top-blur'></div>
+                    <div className='bottom-vinnete'></div>
                     <div className='scrollable'>
                         <div className='text_block'>
                             <p> {product.support} </p>
