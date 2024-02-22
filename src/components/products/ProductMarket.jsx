@@ -13,9 +13,11 @@ function ProductMarket({ product }) {
                 <img className='image' src={product.image} alt="" />
             </div>
             <div className={`info_container ${zoom ? 'show' : ''}`}>
-                <p> {product.name} </p>
-                <p> {product.technique} </p>
-                <p className='price'>{"$"+product.price} </p>
+                <div>
+                    <p> {product.name} </p>
+                    <p> {product.technique} </p>
+                    <p className='price'>{"$" + product.price} </p>
+                </div>
             </div>
         </div>
     );
