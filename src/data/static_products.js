@@ -2,7 +2,7 @@ const products =
 {
     "p1": {
         name: "name",
-        image: "images/icons/image.png",
+        image: "images/products/p1/i1.webp",
         images: ["images/products/p1/i1.webp",
         "images/products/p1/i2.webp",
         "images/products/p1/i3.webp",

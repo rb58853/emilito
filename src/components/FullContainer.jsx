@@ -5,8 +5,8 @@ import products from "../data/static_products";
 
 function FullContainer() {
   return <div className="full-container">
-    {/* <Marketplace/> */}
-    <ProductView product={products['p1']}/>
+    <Marketplace/>
+    {/* <ProductView product={products['p1']}/> */}
   </div>;
 }
 
