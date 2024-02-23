@@ -1,10 +1,10 @@
 .full-container{
     /* display: flex; */
-    /* place-content: center; */
     /* place-items: center; */
     margin-top: 60px;
     margin-bottom: 130px;
     margin-left: 5%;
     margin-right: 5%;
-    /* background-color: rgb(93, 93, 93); */
+    /* background-color: rgb(103, 103, 255); */
+    max-width: 130vh;
 }

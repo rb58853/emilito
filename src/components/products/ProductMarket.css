@@ -3,9 +3,6 @@
     /* border: solid 1px rgba(0, 0, 0, 0.112); */
     text-align: center;
     transition: transform ease-in-out 0.3s;
-    width: 25%;
-    min-width: 150px;
-    max-width: 300px;
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
@@ -14,17 +11,14 @@
 }
 
 .box-product.zoom {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 .box-serie {
     background-color: rgba(0, 0, 0, 0.112);
     text-align: center;
     transition: transform ease-in-out 0.3s;
-    width: 25%;
-    max-width: 300px;
-    min-width: 150px;
-    aspect-ratio: 3/5;
+    aspect-ratio: 35/47;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -32,7 +26,7 @@
 }
 
 .box-serie.zoom {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 .image_container {
@@ -101,6 +95,10 @@
     position: absolute;
     background-color: rgba(255, 255, 255, 0.891);
     font-size: 100%;
+    min-height: 30%;
+    display:flex;
+    place-items: center;
+    place-content: center;
 
     padding: 5%;
     bottom: 0px;

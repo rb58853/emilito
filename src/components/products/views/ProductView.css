@@ -82,7 +82,7 @@
 
 .scrollable_container {
     position: relative;
-    /* background-color: rgb(212, 0, 255); */
+    background-color: rgb(212, 0, 255);
     width: 100%;
     flex-grow: 1;
     margin-top: 10px;

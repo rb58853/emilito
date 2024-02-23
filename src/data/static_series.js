@@ -2,7 +2,7 @@ const series =
 {
     "s1": {
         name: "name",
-        image: "images/products/p1/i1.webp",
+        image: "images/series/serie1.png",
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         products: ['p1', 'p2', 'p3']
