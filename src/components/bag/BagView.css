@@ -1,14 +1,226 @@
-.bag_view{
+.full_bag_view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
+
+.your_bag_text {
+    border: solid 1px black;
+    border-radius: 50px;
+    padding: 6px;
+    padding-inline: 20px;
+    font-size: 150%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: fit-content;
+}
+
+.bag_view {
+    text-align: left;
     display: flex;
     gap: 50px;
     place-content: center;
+    place-items: center;
     background-color: rgba(255, 238, 0, 0.501);
-    width: 90vw;
-    height: 70vh;
+    width: 100%;
+    height: 69vh;
+    font-size: 140%;
+    position: relative;
+    flex-grow: 1;
 }
-.box_bags{
+
+.box_bags {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 400px;
+    min-width: 50%;
+    height: 100%;
+}
+
+.box_buy {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    min-width: 200px;
+    width: 35vw;
+    max-width: 350px;
+    aspect-ratio: 3/2;
+}
+
+.price_buy_box {
+    position: absolute;
+    right: 0;
+}
+
+.total_price_space {
+    position: relative;
+    text-align: left;
+}
+
+.space_full_box_buy {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-content: center;
+    flex-grow: 1;
+}
+
+.space_full_box_buy>a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+}
+
+.checkout_buttom {
+    background-color: white;
+    border: none;
+    margin-top: 5px;
+    padding: 10px;
+
+    transition-property: color, background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    flex-grow: 1;
+    font-size: 100%;
+}
+
+.checkout_buttom:hover {
+    background-color: rgb(208, 208, 208);
+    color: rgb(57, 57, 57);
+}
+
+.continue_shopping_a {
+    font-size: 70%;
+}
+
+.BagItem {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    background-color: pink;
+}
+
+.image_container_bagview {
+    width: 50%;
+    max-width: 30vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+.image_bag_view {
+    width: 100%;
+}
+
+.info_BagItem {
+    background-color: rgba(91, 255, 91, 0.471);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    place-content: end;
+}
+
+.info_BagItem .price {
+    font-size: 80%;
+}
+
+.info_BagItem .name {
+    font-size: 130%;
+}
+
+
+.scrollable_container_BagView {
+    position: relative;
+    background-color: rgb(8, 0, 255);
+    /* width: 100%; */
+    /* height: 100%; */
+    flex-grow: 1;
+}
+
+.scrollable_BagView {
+    position: absolute;
+    /* background-color: rgb(255, 166, 0); */
+    overflow: auto;
+    bottom: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    /* place-content: center; */
+}
+
+.top-vinnete_BagView {
+    position: absolute;
+    /* backdrop-filter: blur(2px); */
+    background-image: linear-gradient(to bottom, #e9e9e9, #e9e9e900);
+    top: 0px;
+    bottom: 90%;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    pointer-events: none;
+}
+
+.bottom-vinnete_BagView {
+    position: absolute;
+    /* backdrop-filter: blur(2px); */
+    background-image: linear-gradient(to top, #e9e9e9, #e9e9e900);
+    top: 90%;
+    bottom: 0px;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    pointer-events: none;
+}
+
+.add-remove-item-space {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    place-items: center;
+
+}
+
+.add-remove-buttom {
+    font-size: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    height: 100%;
+    background-color: #ffffff00;
+    border: solid 1px black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: color, background-color, border;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.add-remove-buttom:hover {
+    background-color: #00000034;
+    color: rgb(65, 65, 65);
+    border: solid 1px rgb(65, 65, 65);
+    transition-duration: 0.1s;
+
+}
+.add-remove-buttom:active {
+    background-color: #00000088;
+    color: rgb(181, 181, 181);
+}
+
+.count_BatItem {
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 70%;
 }

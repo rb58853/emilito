@@ -9,7 +9,7 @@ function FullContainer() {
   return <div className="full-container">
     {/* <Marketplace/> */}
     {/* <ProductView product={products['p1']}/> */}
-    <BagView product={products}/>
+    <BagView items={products}/>
   </div>;
 }
 

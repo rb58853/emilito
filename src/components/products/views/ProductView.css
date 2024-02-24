@@ -87,6 +87,13 @@
     flex-grow: 1;
     margin-top: 10px;
 }
+.scrollable {
+    position: absolute;
+    /* background-color: rgb(255, 166, 0); */
+    overflow: auto;
+    bottom: 0px;
+    top: 0px;
+}
 .top-vinnete{
     position: absolute;
     /* backdrop-filter: blur(2px); */
@@ -111,15 +118,6 @@
 }
 .top-vinnete.hide{
     display: none;
-}
-
-
-.scrollable {
-    position: absolute;
-    /* background-color: rgb(255, 166, 0); */
-    overflow: auto;
-    bottom: 0px;
-    top: 0px;
 }
 
 .add_bag {
