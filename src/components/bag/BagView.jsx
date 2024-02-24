@@ -1,10 +1,11 @@
 import './BagView.css'
+import StepsBuy from './StepsBuy.jsx';
 import React, { useState } from 'react';
 
 
 function BagItem({ product }) {
     return (
-        <div className='BagItem'>
+        <a className='BagItem' href=''>
             <div className='image_container_bagview'>
                 <img className='image_bag_view'
                     src={product.image}
@@ -20,7 +21,7 @@ function BagItem({ product }) {
                     <button className='add-remove-buttom'>+</button>
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 
@@ -62,9 +63,11 @@ function Scrollable({ products }) {
         </div>
     );
 }
+
 function BuyBag({ price }) {
     return (
         <div className='box_buy'>
+            <StepsBuy />
             <div className='space_full_box_buy'>
                 <div className='total_price_space'>
                     <h>{"Total"}</h>
@@ -85,8 +88,8 @@ function BagView({ items }) {
     let price = 0
     return (
         <div className='full_bag_view'>
-            <h className  = 'your_bag_text'> your bag</h>
-            
+            <h className='your_bag_text'> your bag</h>
+
             <div className='bag_view'>
                 <div className='box_bags'>
                     <Scrollable products={products} />

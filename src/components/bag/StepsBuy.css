@@ -1,0 +1,57 @@
+
+
+.steps_buy{
+    /* position: relative; */
+    display: flex;
+    place-content: center;
+    place-items: center;
+    margin-bottom: 50px;
+    gap: 5px;
+    margin-inline: 12%;
+    /* background-color: greenyellow; */
+    height: 40px;
+    max-height: 4vh;
+    margin-bottom: 22px;
+}
+
+.black_line{
+    background-color: black;
+    height: 0px;
+    width: 100%;
+}
+
+.step_buy{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* background-color: red; */
+    place-content: center;
+    place-items: center;
+}
+.step_buy_image{
+    max-height: 100%;
+}
+.step_buy_active{
+    position: absolute;
+    max-height: 30%;
+    aspect-ratio: 1/1;
+}
+.step_text{
+    font-size: 70%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* background-color: goldenrod; */
+}
+
+.full_step_buy{
+    /* background-color: yellow; */
+    max-width: 4vh;
+    max-height: 4vh;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    /* height: fit-content; */
+}

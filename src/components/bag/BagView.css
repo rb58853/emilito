@@ -11,7 +11,7 @@
     border-radius: 50px;
     padding: 6px;
     padding-inline: 20px;
-    font-size: 150%;
+    font-size: 120%;
     margin-top: 3vh;
     margin-bottom: 3vh;
     width: fit-content;
@@ -23,7 +23,7 @@
     gap: 50px;
     place-content: center;
     place-items: center;
-    background-color: rgba(255, 238, 0, 0.501);
+    /* background-color: rgba(255, 238, 0, 0.501); */
     width: 100%;
     height: 69vh;
     font-size: 140%;
@@ -37,17 +37,15 @@
     min-width: 50%;
     height: 100%;
 }
-
 .box_buy {
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    /* background-color: blue; */
     min-width: 200px;
     width: 35vw;
-    max-width: 350px;
-    aspect-ratio: 3/2;
+    max-width: 400px;
+    aspect-ratio: 7/6;
 }
-
 .price_buy_box {
     position: absolute;
     right: 0;
@@ -64,13 +62,15 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    place-content: center;
+    place-content: top;
     flex-grow: 1;
+    position: relative;
 }
 
 .space_full_box_buy>a {
-    margin-top: 20px;
+    margin-top: 20%;
     text-decoration: none;
+    font-size: 70%;
     color: rgb(53, 53, 53);
 }
 
@@ -78,13 +78,14 @@
     background-color: white;
     border: none;
     margin-top: 5px;
-    padding: 10px;
+    /* padding: 10px; */
 
     transition-property: color, background-color;
     transition-duration: 0.25s;
     transition-timing-function: ease-in-out;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     font-size: 100%;
+    height: 25%;
 }
 
 .checkout_buttom:hover {
@@ -92,15 +93,14 @@
     color: rgb(57, 57, 57);
 }
 
-.continue_shopping_a {
-    font-size: 70%;
-}
-
 .BagItem {
     display: flex;
     gap: 10px;
     width: 100%;
-    background-color: pink;
+    /* background-color: pink; */
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
 
 .image_container_bagview {
@@ -116,15 +116,17 @@
 }
 
 .info_BagItem {
-    background-color: rgba(91, 255, 91, 0.471);
+    /* background-color: rgba(91, 255, 91, 0.471); */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     place-content: end;
+    /* gap: 10px; */
 }
 
 .info_BagItem .price {
     font-size: 80%;
+    margin-bottom:20px ;
 }
 
 .info_BagItem .name {
@@ -134,7 +136,7 @@
 
 .scrollable_container_BagView {
     position: relative;
-    background-color: rgb(8, 0, 255);
+    /* background-color: rgb(8, 0, 255); */
     /* width: 100%; */
     /* height: 100%; */
     flex-grow: 1;
@@ -159,7 +161,7 @@
     /* backdrop-filter: blur(2px); */
     background-image: linear-gradient(to bottom, #e9e9e9, #e9e9e900);
     top: 0px;
-    bottom: 90%;
+    bottom: 95%;
     z-index: 10;
     left: 0px;
     right: 0px;
@@ -179,12 +181,11 @@
 }
 
 .add-remove-item-space {
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     align-items: center;
     gap: 10px;
     place-items: center;
-
 }
 
 .add-remove-buttom {
@@ -202,6 +203,7 @@
     transition-property: color, background-color, border;
     transition-duration: 0.25s;
     transition-timing-function: ease-in-out;
+
 }
 
 .add-remove-buttom:hover {
@@ -224,3 +226,4 @@
     padding-right: 40px;
     font-size: 70%;
 }
+
