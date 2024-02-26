@@ -1,17 +1,34 @@
 import './container.css';
 import ProductMarket from '../products/ProductMarket';
 import "./ProductsFromSerie.css"
+import React, { useState } from 'react';
 
-function SerieProducts({ items, name }) {
+function SerieProducts({items, name}) {
   let products = Object.values(items).map(item => {
     return <ProductMarket product={item} />
   })
+  const [showDropdown, setShowDropdown] = useState(false)
+
+
   return <div>
     <div className='serie_select_space'>
       <p className='text_border'>{name}</p>
       <div className='dropdown'>
-        <div className='dropdown_options'>
-          <button className='dropdown_item'>
+
+        <button className='dropdown_item'
+          onClick={() => {
+            showDropdown ? setShowDropdown(false) : setShowDropdown(true)
+          }}
+        >
+          {name}
+        </button>
+
+        <hr className='line' />
+        <div className={`dropdown_options ${showDropdown ? 'show' : ''}`}>
+          <button className='dropdown_item'
+            onClick={() => {
+              return <p>test</p>
+            }}>
             serie1
           </button>
           <button className='dropdown_item'>
@@ -23,10 +40,16 @@ function SerieProducts({ items, name }) {
           <button className='dropdown_item'>
             serie4
           </button>
-        </div>
+          <button className='dropdown_item'>
+            serie5
+          </button>
+          <button className='dropdown_item'>
+            serie6
+          </button>
 
+        </div>
       </div>
-      La parte del seleccionar la serie y to esa talla
+
     </div>
     <div className='container_products_serie'>
       {products}
@@ -34,4 +57,9 @@ function SerieProducts({ items, name }) {
   </div>;
 }
 
+// function SerieProducts({ items, name }) {
+//   return (
+//       <SerieProductsContainer items={items} name={name} />
+//   )
+// }
 export default SerieProducts;
