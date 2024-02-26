@@ -73,7 +73,7 @@ function BuyBag({ price }) {
                     <h>{"Total"}</h>
                     <h className='price_buy_box'>{"$" + price}</h>
                 </div>
-                <a className='continue_shopping_a' href="">continue shopping</a>
+                <a className='continue_shopping_a' href="/">continue shopping</a>
             </div>
             <button className='checkout_buttom' > checkout</button>
         </div>

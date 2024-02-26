@@ -8,7 +8,7 @@ function ProductMarket({ product }) {
             onMouseOver={() => setZoom(true)}
             onMouseLeave={() => setZoom(false)}
             className={`box-product ${zoom ? 'zoom' : ''}`}
-            href=''
+            href={product.key}
         >
             <div className='image_container'>
                 <img className='image' src={product.image} alt="" />

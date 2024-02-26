@@ -44,7 +44,7 @@ function ImageComponent({ product }) {
 
     return (
         <div className='box_images'>
-            <div>
+            {/* <div> */}
                 <div className='image_container_view'>
                     <img id='current'
                         className='image_view'
@@ -75,7 +75,7 @@ function ImageComponent({ product }) {
                 <div className='points'>
                     {points}
                 </div>
-            </div>
+            {/* </div> */}
         </div>
     );
 }

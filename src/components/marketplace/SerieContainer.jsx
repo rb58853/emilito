@@ -13,7 +13,7 @@ function SerieContainer({ items }) {
       {/* <p className='featured_container'> Series</p> */}
     </div>
 
-    <div className='container'>
+    <div className='serie_container'>
       {products}
     </div>
   </div>;

@@ -1,7 +1,14 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max(180px,23%),  1fr));
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(1px, auto);
+  grid-gap:  10px;
+}
+
+.serie_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(180px,30%),  1fr));
+  grid-auto-rows: minmax(1px, auto);
   grid-gap:  10px;
 }
 
@@ -12,10 +19,11 @@
   /* text-align: center; */
   border: solid 1px black;
   width: fit-content;
-  border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 50px;
+  padding: 10px;
+  padding-inline:20px;
   pointer-events: none;
+  margin-top: 15%;
 }
 
 
