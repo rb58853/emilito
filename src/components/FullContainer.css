@@ -1,5 +1,6 @@
 .full-container{
     display: flex;
+    flex-direction: column;
     place-items: center;
     margin-top: 60px;
     margin-bottom: 130px;
@@ -7,4 +8,5 @@
     margin-right: 5%;
     /* background-color: rgb(103, 103, 255); */
     width: 100%;
+    max-width: 130vh;
 }

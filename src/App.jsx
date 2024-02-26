@@ -3,11 +3,10 @@ import FullContainer from './components/FullContainer';
 import TopBars from './components/bars/TopBars';
 import BottomBar from './components/bars/BottomBar';
 
-function App() {
+function App({content}) {
   return <div className="App">
     <TopBars />
-    <FullContainer />
-
+    <FullContainer content={content} />
     <BottomBar />
   </div>;
 }

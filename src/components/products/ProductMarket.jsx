@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 function ProductMarket({ product }) {
     let [zoom, setZoom] = useState(false);
     return (
-        <div
+        <a
             onMouseOver={() => setZoom(true)}
             onMouseLeave={() => setZoom(false)}
             className={`box-product ${zoom ? 'zoom' : ''}`}
+            href=''
         >
             <div className='image_container'>
                 <img className='image' src={product.image} alt="" />
@@ -19,7 +20,7 @@ function ProductMarket({ product }) {
                     <p className='price'>{"$" + product.price} </p>
                 </div>
             </div>
-        </div>
+        </a>
     );
 }
 
