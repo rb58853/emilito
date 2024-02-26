@@ -74,27 +74,40 @@
 .box_info {
     display: flex;
     flex-direction: column;
-    /* background-color: rgba(0, 0, 255, 0.531); */
-    width: 50%;
+    /* background-color: rgba(0, 0, 255, 0.372); */
+    /* width: 50%; */
+    max-width: 50%;
+
+    /* cambiar height por max-height si quiere centar el cuadro de informacion */
     height: 80%;
-    position: relative;
-    
+    /* max-height: 80%; */
 }
 
-.scrollable_container {
+.scrollable {
     position: relative;
-    /* background-color: rgb(212, 0, 255); */
+    /* background-color: rgba(212, 0, 255, 0.333); */
     width: 100%;
     flex-grow: 1;
+    /* margin-top: 10px; */
+    overflow: auto;
+}
+
+.scrollable_container{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    /* background-color: aquamarine; */
+    height: 0px;
     margin-top: 10px;
 }
-.scrollable {
+
+.vinnete_contain {
     position: absolute;
-    /* background-color: rgb(255, 166, 0); */
-    overflow: auto;
-    bottom: 0px;
-    top: 0px;
+    /* background-color: rgba(255, 166, 0, 0.403); */
+    height: 100%;
+    width: 100%;
 }
+
 .top-vinnete{
     position: absolute;
     /* backdrop-filter: blur(2px); */

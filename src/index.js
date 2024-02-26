@@ -7,10 +7,12 @@ import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import products from "./data/static_products";
+import series from './data/static_series.js';
 
 import Marketplace from "./components/marketplace/Marketplace.jsx";
 import ProductView from "./components/products/views/ProductView.jsx";
 import BagView from "./components/bag/BagView.jsx";
+import SerieProducts from './components/marketplace/ProductsFromSerie.jsx';
 
 const routes = [
   {
@@ -27,6 +29,18 @@ Object.keys(products).forEach((key) => {
   routes.push({
     path: key,
     element: <App content={<ProductView product={products[key]} />} />,
+  });
+});
+
+Object.keys(series).forEach((key) => {
+
+  let serie_products = series[key].products.map(product_key => {
+    return products[product_key]
+  })
+
+  routes.push({
+    path: "serie-" + key,
+    element: <App content={<SerieProducts items={serie_products} name={series[key].name} />} />,
   });
 });
 

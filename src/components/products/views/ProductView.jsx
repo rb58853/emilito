@@ -45,36 +45,36 @@ function ImageComponent({ product }) {
     return (
         <div className='box_images'>
             {/* <div> */}
-                <div className='image_container_view'>
-                    <img id='current'
-                        className='image_view'
-                        src={images[current_image]}
-                        alt="" />
+            <div className='image_container_view'>
+                <img id='current'
+                    className='image_view'
+                    src={images[current_image]}
+                    alt="" />
 
-                    <img id='last'
-                        className='image_view_hide'
-                        src={images[last_image]}
-                        alt="" />
+                <img id='last'
+                    className='image_view_hide'
+                    src={images[last_image]}
+                    alt="" />
 
 
-                    <div className='right_to_click'
-                        onClick={() => ChangeImage((current_image + 1) % images.length, set_current, set_last, current_image)}
-                    >
-                    </div>
-                    <div className='left_to_click'
-                        onClick={() => {
-                            if (current_image > 0)
-                                ChangeImage(current_image - 1, set_current, set_last, current_image)
-                            else
-                                ChangeImage(images.length - 1, set_current, set_last, current_image)
-                        }
-                        }
-                    >
-                    </div>
+                <div className='right_to_click'
+                    onClick={() => ChangeImage((current_image + 1) % images.length, set_current, set_last, current_image)}
+                >
                 </div>
-                <div className='points'>
-                    {points}
+                <div className='left_to_click'
+                    onClick={() => {
+                        if (current_image > 0)
+                            ChangeImage(current_image - 1, set_current, set_last, current_image)
+                        else
+                            ChangeImage(images.length - 1, set_current, set_last, current_image)
+                    }
+                    }
+                >
                 </div>
+            </div>
+            <div className='points'>
+                {points}
+            </div>
             {/* </div> */}
         </div>
     );
@@ -87,8 +87,7 @@ function ImageComponent({ product }) {
 *@returns {React.JSX.Element}
 */
 function Vinnete({ top = false, bottom = false }) {
-    return (<div>
-
+    return (<div className='vinnete_contain'>
         {top && <div className='top-vinnete'></div>}
         {bottom && <div className='bottom-vinnete'></div>}
     </div>
@@ -105,15 +104,16 @@ function Scrollable({ product }) {
             (scrollTop / (scrollHeight - clientHeight)) * 100
         );
         setScrollPosition(position);
-        setIsScrollable(scrollHeight > clientHeight && position<99)
+        setIsScrollable(scrollHeight > clientHeight && position < 99)
     };
 
     return (
         <div className='scrollable_container'>
-            <Vinnete top={scrollPosition>0} bottom={isScrollable} />
-            <div id='scrollable' className='scrollable'
+            <Vinnete top={scrollPosition > 0} bottom={isScrollable} />
+            <div className='scrollable'
                 onScroll={handleScroll}
             >
+
                 <div className='text_block'>
                     <p> {product.support} </p>
                     <p>{product.dimension}</p>
