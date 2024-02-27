@@ -34,13 +34,11 @@ Object.keys(products).forEach((key) => {
 
 Object.keys(series).forEach((key) => {
 
-  let serie_products = series[key].products.map(product_key => {
-    return products[product_key]
-  })
+  
 
   routes.push({
     path: "serie-" + key,
-    element: <App content={<SerieProducts items={serie_products} name={series[key].name} />} />,
+    element: <App content={<SerieProducts serie={series[key]} />} />,
   });
 });
 
