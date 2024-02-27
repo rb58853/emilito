@@ -12,7 +12,7 @@
     place-items: center;
     padding-block: 20px;
     /* width: fit-content; */
-    background-color: rgba(255, 251, 0, 0.606);
+    /* background-color: rgba(255, 251, 0, 0.606); */
 }
 
 .dropdown {
@@ -28,6 +28,7 @@
 .line {
     background-color: black;
     width: 100%;
+    height: 0px;
 }
 
 .dropdown_item {
@@ -50,7 +51,7 @@
     opacity: 0;
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    /* background-color: aqua; */
     max-height:0vh;
     overflow: auto;
     gap: 2px;
