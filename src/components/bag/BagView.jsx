@@ -1,11 +1,15 @@
 import './BagView.css'
 import StepsBuy from './StepsBuy.jsx';
 import React, { useState } from 'react';
-import { BagProducts } from './BagFunctions.js';
+import { BagProducts, BagPush, BagPop } from './BagFunctions.js';
+
+let [products, setProducts] = [null, null];
 
 function BagItem({ product, count = 1 }) {
     return (
-        <a className='BagItem' href=''>
+        <a className='BagItem'
+        // href=''
+        >
             <div className='image_container_bagview'>
                 <img className='image_bag_view'
                     src={product.image}
@@ -15,10 +19,23 @@ function BagItem({ product, count = 1 }) {
             <div className='info_BagItem'>
                 <b className='name'>{product.name}</b>
                 <h className='price'>{"$" + product.price}</h>
+
                 <div className='add-remove-item-space'>
-                    <button className='add-remove-buttom'>–</button>
+                    <button className='add-remove-buttom'
+                        onClick={() => {
+                            BagPop(product);
+                            setProducts(Products);
+                        }
+                        }
+                    >–</button>
                     <h className='count_BatItem'>{count}</h>
-                    <button className='add-remove-buttom'>+</button>
+                    <button className='add-remove-buttom'
+                        onClick={() => {
+                            BagPush(product);
+                            setProducts(Products);
+                        }
+                        }
+                    >+</button>
                 </div>
             </div>
         </a>
@@ -39,9 +56,11 @@ function Vinnete({ top = false, bottom = false }) {
     );
 }
 
-function Scrollable({ products }) {
+
+function Scrollable() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollable, setIsScrollable] = useState(true);
+    [products, setProducts] = useState(Products)
 
     const handleScroll = (e) => {
         const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -80,29 +99,28 @@ function BuyBag({ price }) {
     )
 }
 
-function BagView({ items }) {
-    // let products = {}
-    // Object.keys(BagProducts()).forEach(key => { 
-    //     products
-    // })
-
-    let products = Object.keys(BagProducts()).map(item => {
-        return <BagItem product={item} />
+// { setProductsJSON }
+function Products() {
+    let products = Object.values(BagProducts()).map(item => {
+        return <BagItem product={item["product"]} count={item["count"]} />
     })
+    return products
+}
 
-
+function BagView() {
     let price = 0
     return (
         <div className='full_bag_view'>
             <h className='your_bag_text'> your bag</h>
-
+            {/* {JSON.parse(localStorage.getItem("bag"))['p1']} */}
             <div className='bag_view'>
                 <div className='box_bags'>
-                    <Scrollable products={products} />
+                    <Scrollable />
                 </div>
-                <div>
-                    <BuyBag price={price} />
-                </div>
+                {/* <div> */}
+                {/* Zona de la compra */}
+                <BuyBag price={price} />
+                {/* </div> */}
             </div >
         </div>
     );
