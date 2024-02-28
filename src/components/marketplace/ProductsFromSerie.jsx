@@ -52,7 +52,7 @@ function SetAviableSeries(serie, setSelfItems, setSelfName, setShowDropdown, set
   }
 
   let aviableSeries = [
-    <SerieButtom serie={all} setSelfItems={setSelfItems} setSelfName={setSelfName} setShowDropdown={setShowDropdown} setSelfSerie={setSelfSerie} />
+    serie.key != 'all' && <SerieButtom serie={all} setSelfItems={setSelfItems} setSelfName={setSelfName} setShowDropdown={setShowDropdown} setSelfSerie={setSelfSerie} />
   ]
 
   Object.values(series).map(selfSerie => {

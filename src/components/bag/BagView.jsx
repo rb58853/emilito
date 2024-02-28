@@ -1,9 +1,9 @@
 import './BagView.css'
 import StepsBuy from './StepsBuy.jsx';
 import React, { useState } from 'react';
+import { BagProducts } from './BagFunctions.js';
 
-
-function BagItem({ product }) {
+function BagItem({ product, count = 1 }) {
     return (
         <a className='BagItem' href=''>
             <div className='image_container_bagview'>
@@ -17,7 +17,7 @@ function BagItem({ product }) {
                 <h className='price'>{"$" + product.price}</h>
                 <div className='add-remove-item-space'>
                     <button className='add-remove-buttom'>–</button>
-                    <h className='count_BatItem'>50</h>
+                    <h className='count_BatItem'>{count}</h>
                     <button className='add-remove-buttom'>+</button>
                 </div>
             </div>
@@ -81,9 +81,15 @@ function BuyBag({ price }) {
 }
 
 function BagView({ items }) {
-    let products = Object.values(items).map(item => {
+    // let products = {}
+    // Object.keys(BagProducts()).forEach(key => { 
+    //     products
+    // })
+
+    let products = Object.keys(BagProducts()).map(item => {
         return <BagItem product={item} />
     })
+
 
     let price = 0
     return (
