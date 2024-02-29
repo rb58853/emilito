@@ -13,6 +13,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character. Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character. Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -27,6 +28,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "descripcion de esa talla",
         support: "Riso print on Munken 150g paper",
@@ -40,6 +42,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "descripcion de esa talla",
         support: "Riso print on Munken 150g paper",
@@ -58,6 +61,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -77,6 +81,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -91,6 +96,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "descripcion de esa talla",
         support: "Riso print on Munken 150g paper",
@@ -104,6 +110,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "descripcion de esa talla",
         support: "Riso print on Munken 150g paper",
@@ -122,6 +129,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -141,6 +149,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -160,6 +169,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         
@@ -179,6 +189,7 @@ const products =
         technique: "Tecnica 15 x 20 cm",
         price: "0.00",
         limited: 50,
+        aviables: 50,
         dimension: "30 x 42 cm",
         description: "Risography is based on a very environmentally friendly cold printing process. The inks are made from soy only and contain no solvents. Each print offers a unique result, which gives each copy a unique character.",
         

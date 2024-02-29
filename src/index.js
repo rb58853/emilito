@@ -14,7 +14,7 @@ import BagView from "./components/bag/BagView.jsx";
 import SerieProducts from './components/marketplace/ProductsFromSerie.jsx';
 
 import {StartBag} from './components/bag/BagFunctions.js'
-StartBag();
+// StartBag();
 
 const routes = [
   {

@@ -1,6 +1,7 @@
 import './ProductView.css'
-import BlurGradient from '../../utils/blurGradient';
 import React, { useState } from 'react';
+import { ProductCount } from '../../bag/BagFunctions';
+import { BagPush, FullCount } from '../../bag/BagFunctions';
 
 function ChangeImage(index, set_current, set_last, current) {
     var current_image = document.getElementById('current')
@@ -131,6 +132,7 @@ function Scrollable({ product }) {
 }
 
 function ProductView({ product }) {
+    let [count, setCount] = useState(ProductCount(product))
     return (
         <div className='product_view'>
             <ImageComponent product={product} />
@@ -140,10 +142,20 @@ function ProductView({ product }) {
                 <p className='price_view'>{"$" + product.price} </p>
                 <div className='add_space'>
                     <button
-                        className='add_bag'>
+                        className='add_bag'
+                        onClick={() => {
+                            if (!FullCount(product)) {
+                                BagPush(product);
+                                setCount(ProductCount(product));
+                            }
+                        }
+                        }
+                    >
                         Add to bag
                     </button>
-                    <p className='add_count'>1</p>
+                    <p className='add_count'>
+                        {count}
+                    </p>
                 </div>
                 <Scrollable product={product} />
             </div>

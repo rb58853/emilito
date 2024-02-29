@@ -1,11 +1,13 @@
 import './BagView.css'
 import StepsBuy from './StepsBuy.jsx';
 import React, { useState } from 'react';
-import { BagProducts, BagPush, BagPop } from './BagFunctions.js';
+import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount } from './BagFunctions.js';
 
 let [products, setProducts] = [null, null];
 
-function BagItem({ product, count = 1 }) {
+function BagItem({ product, count }) {
+    let [count_, setCount] = useState(count)
+
     return (
         <a className='BagItem'
         // href=''
@@ -25,14 +27,38 @@ function BagItem({ product, count = 1 }) {
                         onClick={() => {
                             BagPop(product);
                             setProducts(Products);
+                            setCount(ProductCount(product))
                         }
                         }
                     >–</button>
-                    <h className='count_BatItem'>{count}</h>
+                    <input
+                        type="number"
+                        className='count_BatItem'
+                        value={count_}
+                        onInput={x => {
+                            setCount(x.target.value)
+                        }
+                        }
+                        onBlur={x => {
+                            BagPushCount(product, x.target.value);
+                            setProducts(Products);
+                        }}
+                        onKeyDown={event => {
+                            if (event.key == "Enter") {
+                                BagPushCount(product, event.target.value);
+                                setProducts(Products);
+                            }
+                        }}
+
+                    ></input>
+                    {/* <h className='count_BatItem'>{count}</h> */}
+
+
                     <button className='add-remove-buttom'
                         onClick={() => {
                             BagPush(product);
                             setProducts(Products);
+                            setCount(ProductCount(product))
                         }
                         }
                     >+</button>
