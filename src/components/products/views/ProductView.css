@@ -168,19 +168,25 @@
 }
 
 .add_bag:hover {
-    color: rgb(60, 60, 60);
-    border: solid 1px rgb(60, 60, 60);
-}
+    color: rgb(74, 74, 74);
+    border: solid 1px rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.144);
+    transition-duration: 0.1s;
 
+}
+.add_bag:active {
+    color: rgb(34, 34, 34);
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.144);
+}
 
 
 .add_count {
     border: solid 1px black;
     width: fit-content;
-    padding: 5px;
-    padding-left: 11px;
-    padding-right: 11px;
-    border-radius: 50%;
+    padding: 7px;
+    padding-inline: 9px;
+    border-radius: 50px;
     display: flex;
     text-align: center;
     line-height: 1;
@@ -189,7 +195,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
+    /* height: 100%; */
+    min-width: 12px;
+    display: inline-block;
 }
 
 .add_space {
@@ -197,6 +205,8 @@
     gap: 10px;
     place-items: center;
     /* background-color: blanchedalmond; */
+    /* place-content: center; */
+    /* position: relative; */
 }
 
 .add_space>* {

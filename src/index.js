@@ -37,7 +37,7 @@ Object.keys(products).forEach((key) => {
 
 Object.keys(series).forEach((key) => {
 
-  
+
 
   routes.push({
     path: "serie-" + key,

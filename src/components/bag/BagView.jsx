@@ -1,13 +1,27 @@
 import './BagView.css'
 import StepsBuy from './StepsBuy.jsx';
-import React, { useState } from 'react';
-import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount } from './BagFunctions.js';
+import React, { useState, useRef } from 'react';
+import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount, FullCount, BagIsEmpty } from './BagFunctions.js';
 
 let [products, setProducts] = [null, null];
-
+function EmptyBag() {
+    return (
+        <div className='empty-bag'>
+            <text>
+                Your bag is empty
+            </text>
+            <img className="icon-bag-bagView" src="images/icons/shop.png" alt="" />
+            <a className='button-start-shopping'
+                href='/'
+            >
+                Start shopping
+            </a>
+        </div>
+    )
+}
 function BagItem({ product, count }) {
     let [count_, setCount] = useState(count)
-
+    const inputRef = useRef();
     return (
         <a className='BagItem'
         // href=''
@@ -35,6 +49,7 @@ function BagItem({ product, count }) {
                         type="number"
                         className='count_BatItem'
                         value={count_}
+                        ref={inputRef}
                         onInput={x => {
                             setCount(x.target.value)
                         }
@@ -47,6 +62,7 @@ function BagItem({ product, count }) {
                             if (event.key == "Enter") {
                                 BagPushCount(product, event.target.value);
                                 setProducts(Products);
+                                inputRef.current.blur();
                             }
                         }}
 
@@ -56,9 +72,11 @@ function BagItem({ product, count }) {
 
                     <button className='add-remove-buttom'
                         onClick={() => {
-                            BagPush(product);
-                            setProducts(Products);
-                            setCount(ProductCount(product))
+                            if (!FullCount(product)) {
+                                BagPush(product);
+                                setProducts(Products);
+                                setCount(ProductCount(product))
+                            }
                         }
                         }
                     >+</button>
@@ -132,8 +150,7 @@ function Products() {
     })
     return products
 }
-
-function BagView() {
+function BagWithProducts() {
     let price = 0
     return (
         <div className='full_bag_view'>
@@ -150,6 +167,15 @@ function BagView() {
             </div >
         </div>
     );
+}
+
+function BagView() {
+    // return <div>{BagIsEmpty().toString()}</div>
+    if (BagIsEmpty())
+        return EmptyBag()
+    else
+        return BagWithProducts()
+
 }
 
 export default BagView;
