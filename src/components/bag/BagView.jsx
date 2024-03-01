@@ -4,6 +4,8 @@ import React, { useState, useRef } from 'react';
 import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount, FullCount, BagIsEmpty } from './BagFunctions.js';
 
 let [products, setProducts] = [null, null];
+let [empty, setEmpty] = [null, null];
+
 function EmptyBag() {
     return (
         <div className='empty-bag'>
@@ -42,6 +44,7 @@ function BagItem({ product, count }) {
                             BagPop(product);
                             setProducts(Products);
                             setCount(ProductCount(product))
+                            setEmpty(BagIsEmpty())
                         }
                         }
                     >–</button>
@@ -57,12 +60,14 @@ function BagItem({ product, count }) {
                         onBlur={x => {
                             BagPushCount(product, x.target.value);
                             setProducts(Products);
+                            setEmpty(BagIsEmpty())
                         }}
                         onKeyDown={event => {
                             if (event.key == "Enter") {
                                 BagPushCount(product, event.target.value);
                                 setProducts(Products);
                                 inputRef.current.blur();
+                                setEmpty(BagIsEmpty())
                             }
                         }}
 
@@ -76,6 +81,7 @@ function BagItem({ product, count }) {
                                 BagPush(product);
                                 setProducts(Products);
                                 setCount(ProductCount(product))
+                                setEmpty(BagIsEmpty())
                             }
                         }
                         }
@@ -170,8 +176,9 @@ function BagWithProducts() {
 }
 
 function BagView() {
-    // return <div>{BagIsEmpty().toString()}</div>
-    if (BagIsEmpty())
+    [empty, setEmpty] = useState(BagIsEmpty())
+
+    if (empty)
         return EmptyBag()
     else
         return BagWithProducts()
