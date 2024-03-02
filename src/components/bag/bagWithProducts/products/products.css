@@ -1,0 +1,111 @@
+.bag-item {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    /* background-color: pink; */
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.bag-item-image-container {
+    width: 50%;
+    max-width: 30vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+.bag-item-image {
+    width: 100%;
+}
+
+.bag-item-info {
+    /* background-color: rgba(91, 255, 91, 0.471); */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    place-content: end;
+    /* gap: 10px; */
+}
+
+.bag-item-info .price {
+    font-size: 80%;
+    margin-bottom: 20px;
+}
+
+.bag-item-info .name {
+    font-size: 130%;
+}
+
+.add-remove-item-space {
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    place-items: center;
+    padding-right: 15px;
+}
+
+.add-remove-button {
+    font-size: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    height: 100%;
+    background-color: #ffffff00;
+    border: solid 1px black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: color, background-color, border, opacity;
+    transition-duration: 0.35s;
+    transition-timing-function: ease-in-out;
+
+    /* flex-grow: 1; */
+}
+
+.add-remove-button:hover {
+    /* background-color: #00000011; */
+    color: rgb(65, 65, 65);
+    border: solid 1px rgb(65, 65, 65);
+    transition-duration: 0.1s;
+    opacity: 0.7;
+}
+
+.add-remove-button:active {
+    /* background-color: #00000088; */
+    color: rgb(200,200,200);
+    border: solid 1px rgb(200,200,200);
+    opacity: 1;
+}
+
+.bag-item-count {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 10px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
+    font-size: 70%;
+    width: 70px;
+    text-align: center;
+    /* flex-grow: 1; */
+}
+.bag-item-count:focus {
+    /* color: red; */
+    outline: none;  
+}
+
+/* Para navegadores basados en WebKit (Chrome, Safari) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+ -webkit-appearance: none; 
+ margin: 0; 
+}
+
+/* Para navegadores basados en Mozilla (Firefox) */
+input[type=number] {
+ -moz-appearance: textfield;
+}

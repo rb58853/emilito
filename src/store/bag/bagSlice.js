@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { BagIsEmpty, BagProducts } from "../../components/bag/BagFunctions";
 
 const initialState = {
-  empty: true,
-  products: [],
+  empty: BagIsEmpty(),
+  products: BagProducts(),
 };
 
 export const bagSlice = createSlice({

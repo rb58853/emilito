@@ -1,85 +1,9 @@
 import './BagView.css'
 import StepsBuy from './stepsBuy/StepsBuy.jsx';
-import React, { useState, useRef, useEffect } from 'react';
-import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount, FullCount, BagIsEmpty } from './BagFunctions.js';
-import { useDispatch, useSelector } from 'react-redux';
-import { EmptyState, SetEmpty } from '../../store/bag/functions.jsx';
-import { UseDispatch } from 'react-redux';
-
-let [products, setProducts] = [null, null];
-
-function BagItem({ product, count }) {
-    let [count_, setCount] = useState(count)
-    const inputRef = useRef();
-    const dispatch = useDispatch();
-
-    return (
-        <a className='BagItem'
-        // href=''
-        >
-            <div className='image_container_bagview'>
-                <img className='image_bag_view'
-                    src={product.image}
-                    alt="" />
-            </div>
-
-            <div className='info_BagItem'>
-                <b className='name'>{product.name}</b>
-                <h className='price'>{"$" + product.price}</h>
-
-                <div className='add-remove-item-space'>
-                    <button className='add-remove-buttom'
-                        onClick={() => {
-                            BagPop(product);
-                            setProducts(Products);
-                            setCount(ProductCount(product))
-                            SetEmpty(dispatch)
-                        }
-                        }
-                    >–</button>
-                    <input
-                        type="number"
-                        className='count_BatItem'
-                        value={count_}
-                        ref={inputRef}
-                        onInput={x => {
-                            setCount(x.target.value)
-                        }
-                        }
-                        onBlur={x => {
-                            BagPushCount(product, x.target.value);
-                            setProducts(Products);
-                            SetEmpty(dispatch)
-                        }}
-                        onKeyDown={event => {
-                            if (event.key == "Enter") {
-                                BagPushCount(product, event.target.value);
-                                setProducts(Products);
-                                inputRef.current.blur();
-                                SetEmpty(dispatch)
-                            }
-                        }}
-
-                    ></input>
-                    {/* <h className='count_BatItem'>{count}</h> */}
-
-
-                    <button className='add-remove-buttom'
-                        onClick={() => {
-                            if (!FullCount(product)) {
-                                BagPush(product);
-                                setProducts(Products);
-                                setCount(ProductCount(product))
-                                SetEmpty(dispatch)
-                            }
-                        }
-                        }
-                    >+</button>
-                </div>
-            </div>
-        </a>
-    )
-}
+import React, { useState} from 'react';
+import { useSelector} from 'react-redux';
+import { EmptyState} from '../../store/bag/functions.jsx';
+import { Products } from './bagWithProducts/products/products.jsx';
 
 /**
 *@param {boolean} top define si se usara difusion en la parte superior 
@@ -98,7 +22,7 @@ function Vinnete({ top = false, bottom = false }) {
 function Scrollable() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollable, setIsScrollable] = useState(true);
-    [products, setProducts] = useState(Products)
+    // [products, setProducts] = useState(Products)
 
     const handleScroll = (e) => {
         const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -115,7 +39,7 @@ function Scrollable() {
             <div className='scrollable_BagView'
                 onScroll={handleScroll}
             >
-                {products}
+                {Products()}
             </div>
         </div>
     );
@@ -135,14 +59,6 @@ function BuyBag({ price }) {
             <button className='checkout_buttom' > checkout</button>
         </div>
     )
-}
-
-// { setProductsJSON }
-function Products() {
-    let products = Object.values(BagProducts()).map(item => {
-        return <BagItem product={item["product"]} count={item["count"]} />
-    })
-    return products
 }
 
 function BagWithProducts() {
