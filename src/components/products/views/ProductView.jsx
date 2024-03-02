@@ -2,6 +2,8 @@ import './ProductView.css'
 import React, { useState } from 'react';
 import { ProductCount } from '../../bag/BagFunctions';
 import { BagPush, FullCount } from '../../bag/BagFunctions';
+import { SetEmpty } from '../../../store/bag/functions';
+import { UseDispatch, useDispatch } from 'react-redux';
 
 function ChangeImage(index, set_current, set_last, current) {
     var current_image = document.getElementById('current')
@@ -132,6 +134,7 @@ function Scrollable({ product }) {
 }
 
 function ProductView({ product }) {
+    const dispatch = useDispatch()
     let [count, setCount] = useState(ProductCount(product))
     return (
         <div className='product_view'>
@@ -147,6 +150,7 @@ function ProductView({ product }) {
                             if (!FullCount(product)) {
                                 BagPush(product);
                                 setCount(ProductCount(product));
+                                SetEmpty(dispatch);
                             }
                         }
                         }

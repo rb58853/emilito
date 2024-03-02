@@ -1,29 +1,18 @@
 import './BagView.css'
-import StepsBuy from './StepsBuy.jsx';
-import React, { useState, useRef } from 'react';
+import StepsBuy from './stepsBuy/StepsBuy.jsx';
+import React, { useState, useRef, useEffect } from 'react';
 import { BagProducts, BagPush, BagPop, BagPushCount, ProductCount, FullCount, BagIsEmpty } from './BagFunctions.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { EmptyState, SetEmpty } from '../../store/bag/functions.jsx';
+import { UseDispatch } from 'react-redux';
 
 let [products, setProducts] = [null, null];
-let [empty, setEmpty] = [null, null];
 
-function EmptyBag() {
-    return (
-        <div className='empty-bag'>
-            <text>
-                Your bag is empty
-            </text>
-            <img className="icon-bag-bagView" src="images/icons/shop.png" alt="" />
-            <a className='button-start-shopping'
-                href='/'
-            >
-                Start shopping
-            </a>
-        </div>
-    )
-}
 function BagItem({ product, count }) {
     let [count_, setCount] = useState(count)
     const inputRef = useRef();
+    const dispatch = useDispatch();
+
     return (
         <a className='BagItem'
         // href=''
@@ -44,7 +33,7 @@ function BagItem({ product, count }) {
                             BagPop(product);
                             setProducts(Products);
                             setCount(ProductCount(product))
-                            setEmpty(BagIsEmpty())
+                            SetEmpty(dispatch)
                         }
                         }
                     >–</button>
@@ -60,14 +49,14 @@ function BagItem({ product, count }) {
                         onBlur={x => {
                             BagPushCount(product, x.target.value);
                             setProducts(Products);
-                            setEmpty(BagIsEmpty())
+                            SetEmpty(dispatch)
                         }}
                         onKeyDown={event => {
                             if (event.key == "Enter") {
                                 BagPushCount(product, event.target.value);
                                 setProducts(Products);
                                 inputRef.current.blur();
-                                setEmpty(BagIsEmpty())
+                                SetEmpty(dispatch)
                             }
                         }}
 
@@ -81,7 +70,7 @@ function BagItem({ product, count }) {
                                 BagPush(product);
                                 setProducts(Products);
                                 setCount(ProductCount(product))
-                                setEmpty(BagIsEmpty())
+                                SetEmpty(dispatch)
                             }
                         }
                         }
@@ -105,7 +94,6 @@ function Vinnete({ top = false, bottom = false }) {
     </div>
     );
 }
-
 
 function Scrollable() {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -156,6 +144,7 @@ function Products() {
     })
     return products
 }
+
 function BagWithProducts() {
     let price = 0
     return (
@@ -175,10 +164,28 @@ function BagWithProducts() {
     );
 }
 
-function BagView() {
-    [empty, setEmpty] = useState(BagIsEmpty())
+function EmptyBag() {
+    return (
+        <div className='empty-bag'>
+            <text>
+                Your bag is empty
+            </text>
+            <img className="icon-bag-bagView" src="images/icons/shop.png" alt="" />
+            <a className='button-start-shopping'
+                href='/'
+            >
+                Start shopping
+            </a>
+        </div>
+    )
+}
 
-    if (empty)
+
+function BagView() {
+    const bag = useSelector((state) => state.bag)
+    EmptyState()
+
+    if (bag.empty)
         return EmptyBag()
     else
         return BagWithProducts()

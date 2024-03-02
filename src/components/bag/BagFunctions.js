@@ -6,6 +6,7 @@ export function BagIsEmpty() {
     // return bag
     return (!bag || Object.keys(bag).length === 0)
 }
+
 export function ProductCount(product) {
     let bag_ = localStorage.getItem("bag");
     let bag = bag_ ? JSON.parse(bag_) : {};
@@ -43,11 +44,6 @@ export function BagProducts() {
         }
     });
     return result;
-}
-
-export function StartBag() {
-    localStorage.setItem('bag', JSON.stringify({}))
-    // localStorage.setItem('bag', null)
 }
 
 export function BagPushCount(item, count) {
@@ -89,7 +85,6 @@ export function BagPop(item) {
             delete bag[key];
         }
     }
-
     localStorage.setItem('bag', JSON.stringify(bag))
 }
 
