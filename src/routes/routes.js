@@ -9,6 +9,7 @@ import Marketplace from "../components/marketplace/Marketplace.jsx";
 import ProductView from "../components/products/views/ProductView.jsx";
 import BagView from "../components/bag/BagView.jsx";
 import SerieProducts from '../components/marketplace/ProductsFromSerie.jsx';
+import About from '../components/about/about.jsx';
 
 
 const routes = [
@@ -18,8 +19,13 @@ const routes = [
     },
     {
         path: "/bag",
-        element: <App content={<BagView items={products} />} />,
+        element: <App content={<BagView/>} />,
     },
+    {
+        path: "/about",
+        element: <App content={<About/>} />,
+    },
+    
 ]
 
 
