@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { BagIsEmpty, BagProducts } from "../../components/bag/BagFunctions";
+import { BagIsEmpty, BagProducts } from "../../components/bag/localStorageFunctions";
 
 const initialState = {
   empty: BagIsEmpty(),

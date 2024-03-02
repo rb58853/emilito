@@ -1,7 +1,7 @@
 import './App.css';
 import FullContainer from './components/FullContainer';
-import TopBars from './components/bars/TopBars';
-import BottomBar from './components/bars/BottomBar';
+import TopBars from './components/bars/topBars/TopBars';
+import BottomBar from './components/bars/bottomBar/BottomBar';
 import './components/utils/basic.css'
 
 function App({ content }) {

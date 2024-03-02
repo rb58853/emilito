@@ -1,0 +1,78 @@
+.menu {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 0px;
+    width: min(max(400px, 30vw), 90vw);
+    top: 0px;
+    height: 100vh;
+    z-index: 100;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform, opacity, ease-in-out 0.3s;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.menu-background {
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.064);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100vh;
+    pointer-events: none;
+    transition: opacity, ease-in-out 0.2s;
+}
+
+.menu-background.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.menu.show {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.close-menu {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+.close-image {
+    width: 100%;
+    opacity: 1;
+    transition: transform, opacity, ease-in-out 0.2s;
+
+}
+
+.close-image:hover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    transform: scale(1.1);
+
+    opacity: 0.7;
+}
+
+.menu-refs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* background-color: aqua; */
+    place-items: center;
+}
+
+.menu-refs>a {
+    text-decoration: none;
+    color: black;
+    margin-top: min(20px,15vh);
+}

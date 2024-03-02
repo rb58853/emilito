@@ -1,7 +1,6 @@
 import './ProductView.css'
 import React, { useState } from 'react';
-import { ProductCount } from '../../bag/BagFunctions';
-import { BagPush, FullCount } from '../../bag/BagFunctions';
+import { BagPush, FullCount, ProductCount } from '../../bag/localStorageFunctions';
 import { SetEmpty } from '../../../store/bag/functions';
 import { UseDispatch, useDispatch } from 'react-redux';
 

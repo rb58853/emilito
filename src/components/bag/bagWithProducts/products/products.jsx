@@ -2,7 +2,7 @@ import './products.css'
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { BagPush, BagPop, BagPushCount, ProductCount, FullCount } from "../../BagFunctions.js";
+import { BagPush, BagPop, BagPushCount, ProductCount, FullCount } from "../../localStorageFunctions.js";
 import { SetEmpty, SetProducts } from "../../../../store/bag/functions.jsx";
 
 let [count_, setCount] = [null, null]

@@ -1,0 +1,58 @@
+
+.box_buy {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    min-width: 200px;
+    width: 35vw;
+    max-width: 400px;
+    aspect-ratio: 7/6;
+}
+
+.price_buy_box {
+    position: absolute;
+    right: 0;
+}
+
+.total_price_space {
+    position: relative;
+    text-align: left;
+}
+
+.space_full_box_buy {
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-content: top;
+    flex-grow: 1;
+    position: relative;
+}
+
+.space_full_box_buy>a {
+    margin-top: 20%;
+    text-decoration: none;
+    font-size: 70%;
+    color: rgb(53, 53, 53);
+}
+
+
+.checkout_buttom {
+    background-color: white;
+    border: none;
+    margin-top: 5px;
+    /* padding: 10px; */
+
+    transition-property: color, background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    /* flex-grow: 1; */
+    font-size: 100%;
+    height: 25%;
+}
+
+.checkout_buttom:hover {
+    background-color: rgb(208, 208, 208);
+    color: rgb(57, 57, 57);
+}
