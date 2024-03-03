@@ -1,4 +1,3 @@
-import './BagView.css'
 import { useSelector} from 'react-redux';
 import { EmptyState} from '../../store/bag/functions.jsx';
 import { EmptyBag } from './emptyBag/emptyBag.jsx';

@@ -5,7 +5,7 @@
     place-items: center;
     /* background-color: rgba(255, 238, 0, 0.501); */
     width: 90vw;
-    height: 70vh;
+    height: 77vh;
     /* margin-top: 10%; */
 }
 
@@ -66,7 +66,7 @@
     place-items: center;
     max-width: 100%;
     max-height: 90%;
-    /* background-color: rgba(0, 0, 0, 0.034); */
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .box_info {
@@ -95,8 +95,8 @@
     display: flex;
     flex-grow: 1;
     /* background-color: aquamarine; */
-    height: 0px;
     margin-top: 10px;
+    height: 0px;
 }
 
 .vinnete_contain {

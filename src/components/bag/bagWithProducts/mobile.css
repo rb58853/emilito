@@ -1,0 +1,23 @@
+@media(max-width:800px) {
+    .bag_view {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .box_bags {
+        width: 100%;
+    }
+    .scrollable_container_BagView {
+        position: static;
+    }
+    .scrollable_BagView {
+        position: static;
+    }
+    
+.top-vinnete_BagView {
+    display: none;
+}
+
+.bottom-vinnete_BagView {
+    display: none;
+}
+}

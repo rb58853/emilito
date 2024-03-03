@@ -1,14 +1,16 @@
 import products from "../../data/static_products.js";
 import series from "../../data/static_series.js";
-import ProductContainer from "./container.jsx";
+import ProductContainer from "./Products/ProductContainer.jsx";
 import SerieContainer from "./SerieContainer.jsx";
 import "./Marketplace.css"
-import BagView from "../bag/BagView.jsx";
 
 function Marketplace() {
   return <div>
-    <SerieContainer items = {series}/>
-    <ProductContainer items = {products}/>
+    <SerieContainer items={series} />
+    <div className='center_content'>
+      <p className='featured_container'> Featured Products</p>
+    </div>
+    <ProductContainer items={products} />
   </div>;
 }
 

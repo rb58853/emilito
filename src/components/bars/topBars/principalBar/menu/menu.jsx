@@ -1,4 +1,5 @@
 import './menu.css'
+import './mobile.css'
 
 export function Menu({ showMenu, setShowMenu }) {
     return <section>

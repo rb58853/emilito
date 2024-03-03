@@ -1,4 +1,5 @@
 import "./buy.css"
+import "./mobile.css"
 import StepsBuy from "./stepsBuy/StepsBuy"
 
 function BuyBag({ price }) {

@@ -1,0 +1,27 @@
+@media(max-width:800px) {
+    .box_buy {
+        background-color: blue;
+        min-width: 0px;
+        width: 100%;
+        max-width: 100%;
+        /* aspect-ratio: 2/1; */
+    }
+    .space_full_box_buy {
+        background-color: white;
+        padding: 30px;
+        padding-inline: 20%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        place-content: top;
+        flex-grow: 1;
+        position: relative;
+    }
+    
+    .space_full_box_buy>a {
+        margin-top: 30px;
+        text-decoration: none;
+        font-size: 70%;
+        color: rgb(53, 53, 53);
+    }
+}

@@ -1,20 +1,9 @@
-import './container.css';
-import ProductMarket from '../products/ProductMarket';
 import "./ProductsFromSerie.css"
+import ProductMarket from '../products/ProductMarket';
 import React, { useState } from 'react';
 import series from "../../data/static_series.js";
 import products from "../../data/static_products.js"
-
-function SerieProductsContainer({ items, name }) {
-  let products = Object.values(items).map(item => {
-    return <ProductMarket product={item} />
-  })
-  return (
-    <div className='container_products_serie'>
-      {products}
-    </div>
-  );
-}
+import ProductContainer from './Products/ProductContainer.jsx';
 
 function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSelfSerie }) {
   let serieProducts = serie.products.map(product_key => {
@@ -103,7 +92,7 @@ function SerieProducts({ serie }) {
         </div>
       </div>
 
-      <SerieProductsContainer items={selfItems} name={selfName} />
+      <ProductContainer items={selfItems} name={selfName} />
     </div>
   )
 }

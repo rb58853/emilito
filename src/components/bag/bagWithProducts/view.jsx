@@ -1,7 +1,8 @@
+import './view.css'
+import './mobile.css'
 import React, { useState} from 'react';
 import { Products } from './products/products';
 import BuyBag from './buySpace/buy.jsx'
-import './view.css'
 
 /**
 *@param {boolean} top define si se usara difusion en la parte superior 
