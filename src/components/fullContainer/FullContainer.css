@@ -3,10 +3,10 @@
     flex-direction: column;
     place-items: center;
     margin-top: 60px;
-    margin-bottom: 130px;
+    margin-bottom: 140px;
     margin-left: 5%;
     margin-right: 5%;
     /* background-color: rgba(0, 8, 255, 0.224); */
-    width: 100%;
+    width: 90%;
     max-width: 130vh;
 }

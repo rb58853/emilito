@@ -1,13 +1,11 @@
 
 .App {
-  /* text-align: center; */
   text-align: left;
-  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
   display: flex;
-  /* background-color: #61dafb; */
-  /* height: 100%; */
-  /* place-items: center; */
+  flex-direction: column;
+  place-items: center;
   place-content: center;
+  /* background-color: #61dafb; */
 }
 
 .App-header {

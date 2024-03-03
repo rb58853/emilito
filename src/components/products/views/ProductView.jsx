@@ -1,4 +1,5 @@
 import './ProductView.css'
+import './mobile.css'
 import React, { useState } from 'react';
 import { BagPush, FullCount, ProductCount } from '../../bag/localStorageFunctions';
 import { SetEmpty } from '../../../store/bag/functions';

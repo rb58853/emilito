@@ -1,5 +1,5 @@
 import './BottomBar.css';
-
+import './mobile.css'
 const BottomBar = () => {
     return (
         <div className="bottom_bar">
