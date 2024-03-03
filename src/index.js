@@ -5,7 +5,8 @@ import { router } from './routes/routes.js';
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
-
+import './style/style.css'
+import './style/config.css'
 // import { CleanBag } from './components/bag/BagFunctions.js';
 // StartBag()
 

@@ -1,0 +1,10 @@
+.header-text {
+    font-size: 130%;
+    border: solid 1px black;
+    border-radius: 50px;
+    padding: 4px;
+    padding-inline: 20px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: fit-content;
+}

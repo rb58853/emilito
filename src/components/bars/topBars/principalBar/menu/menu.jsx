@@ -13,7 +13,7 @@ export function Menu({ showMenu, setShowMenu }) {
             </button>
 
             <section className='menu-refs'>
-                <a href="/bag">
+                <a href="/shop">
                     Shop
                 </a>
                 <a href="/about">

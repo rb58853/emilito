@@ -10,7 +10,13 @@ import ProductView from "../components/products/views/ProductView.jsx";
 import BagView from "../components/bag/BagView.jsx";
 import SerieProducts from '../components/marketplace/ProductsFromSerie.jsx';
 import About from '../components/about/about.jsx';
+import Terms from '../components/terms/terms.jsx';
 
+let all = {
+    key: 'all',
+    name: "all",
+    products: Object.keys(products).map(key => { return key })
+  }
 
 const routes = [
     {
@@ -25,6 +31,14 @@ const routes = [
         path: "/about",
         element: <App content={<About/>} />,
     },
+    {
+        path: "/terms",
+        element: <App content={<Terms/>} />,
+    },
+    {
+        path: "/shop",
+        element: <App content={<SerieProducts serie={all} />} />,
+    }
     
 ]
 

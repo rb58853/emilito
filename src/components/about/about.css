@@ -1,4 +1,13 @@
 .about-space{
-    background-color: aqua;
-    max-width: min(100%, 600px);
+    /* background-color: aqua; */
+    max-width: min(100%, 800px);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    /* font-size: 90%; */
+}
+.artist-image{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
