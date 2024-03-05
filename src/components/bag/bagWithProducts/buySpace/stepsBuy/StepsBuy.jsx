@@ -1,5 +1,5 @@
 import "./StepsBuy.css"
-
+import "./mobile.css"
 function StepsBuy({ step = 0 }) {
     return (<div className='steps_buy'>
         <div className='full_step_buy'>

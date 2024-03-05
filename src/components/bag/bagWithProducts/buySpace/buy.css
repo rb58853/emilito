@@ -1,3 +1,6 @@
+.buy-mobile{
+    display: none;
+}
 
 .box_buy {
     display: flex;
@@ -15,8 +18,10 @@
 }
 
 .total_price_space {
+    /* background-color: brown; */
     position: relative;
     text-align: left;
+    width: 100%;
 }
 
 .space_full_box_buy {
@@ -26,11 +31,13 @@
     flex-direction: column;
     text-align: center;
     place-content: top;
+    place-items: center;
     flex-grow: 1;
     position: relative;
 }
 
 .space_full_box_buy>a {
+
     margin-top: 20%;
     text-decoration: none;
     font-size: 70%;

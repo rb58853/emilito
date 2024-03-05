@@ -1,0 +1,6 @@
+@media(max-width:800px) {
+    .steps_buy {
+        width: min(300px,80vw);
+        margin-inline:0px;
+    }
+}

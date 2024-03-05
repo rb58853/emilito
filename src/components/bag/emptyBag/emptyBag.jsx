@@ -1,5 +1,5 @@
 import './emptyBag.css'
-
+import './mobile.css'
 export function EmptyBag() {
     return (
         <div className='empty-bag'>

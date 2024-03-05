@@ -1,27 +1,61 @@
 @media(max-width:800px) {
     .box_buy {
-        background-color: blue;
-        min-width: 0px;
+        /* background-color: blue; */
+        place-items: center;
         width: 100%;
+        width: 90vw;
         max-width: 100%;
-        /* aspect-ratio: 2/1; */
+        aspect-ratio: 5/2;
     }
+
     .space_full_box_buy {
         background-color: white;
-        padding: 30px;
-        padding-inline: 20%;
+        padding: 20px;
+        padding-inline: 15%;
+        padding-bottom: 0px;
         display: flex;
         flex-direction: column;
         text-align: center;
         place-content: top;
         flex-grow: 1;
         position: relative;
+        margin-bottom: 10px;
+        width: 70%;
     }
-    
+
     .space_full_box_buy>a {
-        margin-top: 30px;
+        margin-top: 20px;
         text-decoration: none;
         font-size: 70%;
-        color: rgb(53, 53, 53);
+        color: rgb(14, 14, 14);
+        margin-bottom: 0px;
+    }
+
+    .buy-mobile {
+        display: block;
+        width: 100%;
+    }
+
+    .buy-desktop {
+        display: none;
+    }
+
+    .checkout_buttom {
+        display: flex;
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.053);
+        border-radius: 50px;
+        width: 80%;
+        padding: 20px;
+        place-items: center;
+        place-content: center;
+    }
+
+    .checkout_buttom:hover {
+        background-color: rgba(0, 0, 0, 0.053);
+    }
+
+    .checkout_buttom:active {
+        background-color: rgba(0, 0, 0, 0.1);
     }
 }

@@ -2,19 +2,47 @@ import "./buy.css"
 import "./mobile.css"
 import StepsBuy from "./stepsBuy/StepsBuy"
 
-function BuyBag({ price }) {
+function BuyMobile({ price }) {
     return (
-        <div className='box_buy'>
-            <StepsBuy />
-            <div className='space_full_box_buy'>
-                <div className='total_price_space'>
-                    <h>{"Total"}</h>
-                    <h className='price_buy_box'>{"$" + price}</h>
+        <div className="buy-mobile">
+            <div className='box_buy'>
+                <div className='space_full_box_buy'>
+                    <div className='total_price_space'>
+                        <h>{"Total"}</h>
+                        <h className='price_buy_box'>{"$" + price}</h>
+                    </div>
+                    <button className='checkout_buttom' > checkout</button>
+                    <a className='continue_shopping_a' href="/">continue shopping</a>
                 </div>
-                <a className='continue_shopping_a' href="/">continue shopping</a>
+                <StepsBuy />
             </div>
-            <button className='checkout_buttom' > checkout</button>
         </div>
     )
+
+}
+function BuyDesktop({ price }) {
+    return (
+        <div className="buy-desktop">
+            <div className='box_buy'>
+                <StepsBuy />
+                <div className='space_full_box_buy'>
+                    <div className='total_price_space'>
+                        <h>{"Total"}</h>
+                        <h className='price_buy_box'>{"$" + price}</h>
+                    </div>
+                    <a className='continue_shopping_a' href="/">continue shopping</a>
+                </div>
+                <button className='checkout_buttom' > checkout</button>
+            </div>
+        </div>
+    )
+}
+function BuyBag({ price }) {
+    return (
+        <div>
+            <BuyDesktop price={price} />
+            <BuyMobile price={price} />
+        </div>
+    );
 }
 export default BuyBag

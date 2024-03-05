@@ -2,22 +2,28 @@
     .bag_view {
         flex-direction: column;
         gap: 10px;
+        height: 100%;
+        width: 100%;
+
     }
+
     .box_bags {
         width: 100%;
     }
+
     .scrollable_container_BagView {
         position: static;
     }
+
     .scrollable_BagView {
         position: static;
     }
-    
-.top-vinnete_BagView {
-    display: none;
-}
 
-.bottom-vinnete_BagView {
-    display: none;
-}
+    .top-vinnete_BagView {
+        display: none;
+    }
+
+    .bottom-vinnete_BagView {
+        display: none;
+    }
 }
