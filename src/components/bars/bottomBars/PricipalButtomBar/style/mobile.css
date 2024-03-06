@@ -1,13 +1,8 @@
 @media(max-width:800px) {
     .bottom_bar {
+        /* background-color: brown; */
         position: relative;
-        display: flex;
-        place-content: center;
-        z-index: 0;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        bottom: 40px;
-        /* height: 113px; */
+        top:0px;
     }
     .links{
         display: flex;

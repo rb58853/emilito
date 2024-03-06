@@ -1,6 +1,6 @@
 import './container.css';
 import './mobile.css'
-import ProductMarket from '../../products/ProductMarket.jsx';
+import ProductMarket from '../../products/ProductMarket/ProductMarket';
 
 function ProductContainer({ items }) {
   let products = Object.values(items).map(item => {

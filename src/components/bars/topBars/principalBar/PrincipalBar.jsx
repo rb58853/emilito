@@ -1,5 +1,6 @@
+import './style/desktop.css';
+import './style/mobile.css';
 import { useSelector } from 'react-redux';
-import './PrincipalBar.css';
 import { Menu } from './menu/menu';
 import { useState } from 'react';
 

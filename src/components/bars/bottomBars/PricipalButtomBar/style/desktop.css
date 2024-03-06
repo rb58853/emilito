@@ -1,11 +1,8 @@
 .bottom_bar {
-    position: fixed;
     display: flex;
     place-content: center;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    z-index: 0;
-    bottom: 0px;
     padding-top: 30px;
     padding-bottom: 30px;
 }

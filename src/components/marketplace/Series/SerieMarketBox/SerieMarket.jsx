@@ -1,4 +1,4 @@
-import './ProductMarket.css'
+import './style/desktop.css'
 import React, { useState } from 'react';
 
 function SerieMarket({serie} ) {

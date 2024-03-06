@@ -1,6 +1,6 @@
-import './Products/container.css';
-import ProductMarket from '../products/ProductMarket';
-import SerieMarket from '../products/SerieMarket';
+import './style/desktop.css';
+// import ProductMarket from '../../../products/ProductMarket';
+import SerieMarket from '../SerieMarketBox/SerieMarket';
 
 function SerieContainer({ items }) {
   let products = Object.values(items).map(item => {

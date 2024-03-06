@@ -1,4 +1,5 @@
-import './ProductMarket.css'
+import './style/desktop.css'
+import './style/mobile.css'
 import React, { useState } from 'react';
 
 function ProductMarket({ product }) {
@@ -14,11 +15,9 @@ function ProductMarket({ product }) {
                 <img className='image' src={product.image} alt="" />
             </div>
             <div className={`info_container ${zoom ? 'show' : ''}`}>
-                <div>
-                    <p> {product.name} </p>
-                    <p> {product.technique} </p>
-                    <p className='price'>{"$" + product.price} </p>
-                </div>
+                <text> {product.name} </text>
+                <text> {product.technique} </text>
+                <text className='price'>{"$" + product.price} </text>
             </div>
         </a>
     );

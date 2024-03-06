@@ -8,7 +8,7 @@ import series from '../data/static_series.js';
 import Marketplace from "../components/marketplace/Marketplace.jsx";
 import ProductView from "../components/products/views/ProductView.jsx";
 import BagView from "../components/bag/BagView.jsx";
-import SerieProducts from '../components/marketplace/ProductsFromSerie.jsx';
+import SerieProducts from '../components/marketplace/Series/ProductsFromSerie/ProductsFromSerie.jsx';
 import About from '../components/about/about.jsx';
 import Terms from '../components/terms/terms.jsx';
 

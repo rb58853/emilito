@@ -1,0 +1,11 @@
+.bottom-bars {
+    position: fixed;
+    flex-direction: column;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    z-index: 0;
+    bottom: 0px;
+    width: 100%;
+    
+}

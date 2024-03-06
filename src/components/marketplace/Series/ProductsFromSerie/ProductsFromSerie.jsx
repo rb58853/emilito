@@ -1,9 +1,8 @@
 import "./ProductsFromSerie.css"
-import ProductMarket from '../products/ProductMarket';
 import React, { useState } from 'react';
-import series from "../../data/static_series.js";
-import products from "../../data/static_products.js"
-import ProductContainer from './Products/ProductContainer.jsx';
+import series from "../../../../data/static_series.js";
+import products from "../../../../data/static_products.js"
+import ProductContainer from '../../Products/ProductContainer.jsx';
 
 function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSelfSerie }) {
   let serieProducts = serie.products.map(product_key => {

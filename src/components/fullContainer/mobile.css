@@ -2,12 +2,11 @@
     .full-container {
         flex-direction: column;
         margin-top: 60px;
-        margin-bottom: 60px;
-        /* background-color: rgb(0, 0, 0); */
+        margin-bottom: 5%;
+        /* background-color: rgba(0, 255, 60, 0.244); */
         width: 90%;
         height: 100%;
         overflow: auto;
-        min-height: calc(100vh - 350px);
-
+        min-height: calc(100vh - 300px);
     }
 }

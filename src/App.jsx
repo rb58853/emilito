@@ -1,7 +1,7 @@
 import './App.css';
 import FullContainer from './components/fullContainer/FullContainer';
 import TopBars from './components/bars/topBars/TopBars';
-import BottomBar from './components/bars/bottomBar/BottomBar';
+import BottomBars from './components/bars/bottomBars/View/bottomBars.jsx';
 import './components/utils/basic.css'
 
 function App({ content }) {
@@ -9,7 +9,7 @@ function App({ content }) {
     <div className="App">
       <TopBars />
       <FullContainer content={content} />
-      <BottomBar />
+      <BottomBars />
     </div>
   );
 }
