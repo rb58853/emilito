@@ -5,27 +5,24 @@ import SerieMarket from '../../SerieMarketBox/SerieMarket';
 import { useEffect, useRef, useState } from 'react';
 
 let [currentSerie, setCurrentSerie] = [null, null]
-let [lastSerie, setLastSerie] = [null, null]
-
-function ChangeSerieFade(index) {
-  var currentSerieComponent = document.getElementById('current-serie')
-  var lastSerieComponent = document.getElementById('last-serie')
-
-  currentSerieComponent.addEventListener('animationend', function () {
-    this.classList.remove('fade_in');
-  })
-  currentSerieComponent.classList.add('fade_in')
-  lastSerieComponent.addEventListener('animationend', function () {
-    this.classList.remove('fade_out');
-  })
-
-  lastSerieComponent.classList.add('fade_out')
-  setLastSerie(currentSerie)
-  setCurrentSerie(index)
-}
+let [lastDeltaX, setLastDeltaX] = [null, null];
+let [currentDeltaX, setCurrentDeltaX] = [null, null];
 
 function ChangeSerie(index) {
   setCurrentSerie(index)
+}
+
+function Next(series) {
+  // ChangeSerie((currentSerie + 1) % series.length)
+  if (currentSerie < series.length - 1)
+    ChangeSerie((currentSerie + 1) % series.length)
+}
+
+function Back(series) {
+  if (currentSerie > 0)
+    ChangeSerie(currentSerie - 1)
+  // else
+  //   ChangeSerie(series.length - 1)
 }
 
 function Point({ index }) {
@@ -41,10 +38,25 @@ function Point({ index }) {
   )
 }
 
+function ChangeSerieWithScroll(e, series) {
+  setCurrentDeltaX(e.currentTarget.scrollLeft)
+  setLastDeltaX(e.currentTarget.scrollLeft)
+
+  // if (e.currentTarget.scrollLeft == currentDeltaX) {
+
+
+    if (e.currentTarget.scrollLeft > lastDeltaX)
+      Next(series)
+
+    if (e.currentTarget.scrollLeft < lastDeltaX)
+      Back(series)
+  }
+// }
+
 function SerieContainerMobile({ items }) {
   [currentSerie, setCurrentSerie] = useState(0);
-  [lastSerie, setLastSerie] = useState(0);
-
+  [lastDeltaX, setLastDeltaX] = useState(0);
+  [currentDeltaX, setCurrentDeltaX] = useState(0);
 
   const seriesRef = useRef()
   let series = Object.values(items).map((item, index) => {
@@ -59,30 +71,31 @@ function SerieContainerMobile({ items }) {
   useEffect(() => {
     const component = seriesRef.current.querySelectorAll('li')[currentSerie];
     if (component)
-      component.scrollIntoView({ behavior: "smooth", block: "start" });
+      component.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [currentSerie])
 
 
   return <div className='serie-container-mobile'>
+    {currentDeltaX}
     <div className='box-serie-container-mobile'>
-      <div ref={seriesRef} className='box-serie-mobile' id='current-serie'>
+      <div
+        className='box-serie-mobile'
+        ref={seriesRef}
+
+        onScroll={(e) => {
+          // ChangeSerieWithScroll(e, series)
+        }}
+      >
         {series}
       </div>
 
-      {/* <div className='box-serie-mobile-hide' id='last-serie'>
-        {series[lastSerie]}
-      </div> */}
-
       <button className='right-button'
-        onClick={() => ChangeSerie((currentSerie + 1) % series.length)}>
+        onClick={() => Next(series)}>
         {"❱"}
       </button>
       <button className='left-button'
         onClick={() => {
-          if (currentSerie > 0)
-            ChangeSerie(currentSerie - 1)
-          else
-            ChangeSerie(series.length - 1)
+          Back(series)
         }} >
 
         {"❰"}

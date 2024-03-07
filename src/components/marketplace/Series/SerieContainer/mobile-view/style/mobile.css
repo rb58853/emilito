@@ -41,31 +41,30 @@
     }
 
     .left-button {
-        background-color: rgba(0, 0, 0, 0.221);
+        background-color: rgba(0, 0, 0, 0.15);
         color: rgba(0, 0, 0, 0.6);
         border: none;
-        border-radius: 7px;
         position: absolute;
         width: 40px;
         height: 120px;
         cursor: pointer;
         z-index: 1;
         font-size: 200%;
-
+        border-radius: 2px;
         left: 0px;
     }
 
     .right-button {
-        background-color: rgba(0, 0, 0, 0.221);
+        background-color: rgba(0, 0, 0, 0.15);
         color: rgba(0, 0, 0, 0.6);
         border: none;
-        border-radius: 7px;
         position: absolute;
         width: 40px;
         height: 120px;
         cursor: pointer;
         z-index: 1;
         font-size: 200%;
+        border-radius: 2px;
 
         right: 0px;
     }
