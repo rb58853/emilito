@@ -1,0 +1,15 @@
+@media (max-width: 800px) {
+    .box-serie {
+        overflow: visible;
+        min-width: 100%;
+        min-height: 100%;
+        background-color: brown;
+    }
+
+    .serie_info_container {
+        min-height: 0%;
+        padding: 3%;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

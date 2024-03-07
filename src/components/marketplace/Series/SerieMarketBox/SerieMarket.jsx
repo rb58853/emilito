@@ -1,7 +1,9 @@
 import './style/desktop.css'
+import './style/mobile.css'
+
 import React, { useState } from 'react';
 
-function SerieMarket({serie} ) {
+function SerieMarket({serie, ref, key} ) {
     let [zoom, setZoom] = useState(false);
     return (
         <a

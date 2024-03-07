@@ -7,7 +7,7 @@ export function Menu({ showMenu, setShowMenu }) {
         <div className={`menu ${showMenu ? 'show' : ''}`}>
             <button className='close-menu'
                 onClick={() => setShowMenu(false)}
-            >
+            >   
                 <img
                     className='close-image'
                     src="images/icons/close1.png" alt="" />

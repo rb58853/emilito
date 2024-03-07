@@ -1,22 +1,12 @@
-import './style/desktop.css';
-// import ProductMarket from '../../../products/ProductMarket';
-import SerieMarket from '../SerieMarketBox/SerieMarket';
+import SerieContainerDesktop from "./desktop-view/SerieContainer-desktop"
+import SerieContainerMobile from "./mobile-view/SerieContainer-mobile"
 
 function SerieContainer({ items }) {
-  let products = Object.values(items).map(item => {
-    return <SerieMarket serie={item} />
-  })
-
-  return <div>
-    
-    <div className='center_content'>
-      {/* <p className='featured_container'> Series</p> */}
-    </div>
-
-    <div className='serie_container'>
-      {products}
-    </div>
-  </div>;
+    return (
+        <div>
+            <SerieContainerDesktop items={items} />
+            <SerieContainerMobile items={items} />
+        </div>
+    )
 }
-
-export default SerieContainer;
+export default SerieContainer
