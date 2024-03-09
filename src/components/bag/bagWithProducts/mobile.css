@@ -13,9 +13,11 @@
 
     .scrollable_container_BagView {
         position: static;
+        pointer-events: none;
     }
 
     .scrollable_BagView {
+        pointer-events: none;
         position: static;
     }
 
@@ -25,9 +27,5 @@
 
     .bottom-vinnete_BagView {
         display: none;
-    }
-
-    .scrollable_BagView{
-        pointer-events: none;
     }
 }
