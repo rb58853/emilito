@@ -39,19 +39,12 @@ function Point({ index }) {
 }
 
 function ChangeSerieWithScroll(e, series) {
-  setCurrentDeltaX(e.currentTarget.scrollLeft)
-  setLastDeltaX(e.currentTarget.scrollLeft)
+  if (e.currentTarget.scrollLeft > lastDeltaX)
+    Next(series)
 
-  // if (e.currentTarget.scrollLeft == currentDeltaX) {
-
-
-    if (e.currentTarget.scrollLeft > lastDeltaX)
-      Next(series)
-
-    if (e.currentTarget.scrollLeft < lastDeltaX)
-      Back(series)
-  }
-// }
+  if (e.currentTarget.scrollLeft < lastDeltaX)
+    Back(series)
+}
 
 function SerieContainerMobile({ items }) {
   [currentSerie, setCurrentSerie] = useState(0);
@@ -76,21 +69,22 @@ function SerieContainerMobile({ items }) {
 
 
   return <div className='serie-container-mobile'>
-    {currentDeltaX}
+    {lastDeltaX}
     <div className='box-serie-container-mobile'>
       <div
         className='box-serie-mobile'
         ref={seriesRef}
 
-        onScroll={(e) => {
-          // ChangeSerieWithScroll(e, series)
-        }}
+        // onPointerUp={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
+        onPointerDown={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
+        onPointerUp={(e) => ChangeSerieWithScroll(e, series)}
       >
         {series}
       </div>
 
       <button className='right-button'
-        onClick={() => Next(series)}>
+        onClick={() => Next(series)}
+      >
         {"❱"}
       </button>
       <button className='left-button'
@@ -107,7 +101,7 @@ function SerieContainerMobile({ items }) {
       {points}
     </div>
 
-  </div>;
+  </div >;
 }
 
 export default SerieContainerMobile;

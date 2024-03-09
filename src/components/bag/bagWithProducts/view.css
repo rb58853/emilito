@@ -4,6 +4,7 @@
     flex-direction: column;
     place-content: center;
     place-items: center;
+    /* background-color: brown; */
 }
 
 .your_bag_text {
@@ -34,7 +35,7 @@
 .box_bags {
     display: flex;
     flex-direction: column;
-    min-width: 50%;
+    min-width: 40%;
     height: 100%;
     /* background-color: pink; */
 }

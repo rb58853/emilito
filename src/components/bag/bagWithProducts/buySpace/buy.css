@@ -7,8 +7,8 @@
     flex-direction: column;
     /* background-color: blue; */
     min-width: 200px;
-    width: 35vw;
-    max-width: 400px;
+    width: 100vw;
+    max-width: min(400px, 25vw);
     aspect-ratio: 7/6;
 }
 

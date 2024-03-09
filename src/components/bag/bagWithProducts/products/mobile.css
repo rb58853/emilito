@@ -1,0 +1,22 @@
+@media(max-width:800px) {
+    .bag-item {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        /* background-color: pink; */
+        cursor: pointer;
+        color: black;
+        text-decoration: none;
+    }
+
+    .bag-item-image-container {
+        width: 50%;
+        min-width: 30%;
+        max-width: 20vh;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        flex-grow: 1;
+    }
+}
