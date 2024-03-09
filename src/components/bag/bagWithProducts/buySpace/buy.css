@@ -1,3 +1,7 @@
+.buy-bag{
+    width: 100%;
+}
+
 .buy-mobile{
     display: none;
 }
@@ -10,6 +14,7 @@
     width: 100vw;
     max-width: min(400px, 25vw);
     aspect-ratio: 7/6;
+    font-size: 80%;
 }
 
 .price_buy_box {
@@ -36,11 +41,10 @@
     position: relative;
 }
 
-.space_full_box_buy>a {
-
+.continue_shopping_a {
     margin-top: 20%;
     text-decoration: none;
-    font-size: 70%;
+    font-size: 90%;
     color: rgb(53, 53, 53);
 }
 

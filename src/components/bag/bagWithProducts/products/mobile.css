@@ -19,4 +19,15 @@
         place-items: center;
         flex-grow: 1;
     }
+    .add-remove-button:hover {
+        color: black;
+        border: solid 1px black;
+        opacity: 1;
+        cursor: pointer;
+    }
+    .add-remove-button:active {
+        color: rgb(200, 200, 200);
+        border: solid 1px rgb(200, 200, 200);
+        opacity: 1;
+    }
 }

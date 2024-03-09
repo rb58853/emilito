@@ -26,4 +26,8 @@
     .bottom-vinnete_BagView {
         display: none;
     }
+
+    .scrollable_BagView{
+        pointer-events: none;
+    }
 }

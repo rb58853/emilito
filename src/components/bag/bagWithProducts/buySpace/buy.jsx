@@ -6,13 +6,15 @@ function BuyMobile({ price }) {
     return (
         <div className="buy-mobile">
             <div className='box_buy'>
-                <div className='space_full_box_buy'>
-                    <div className='total_price_space'>
-                        <h>{"Total"}</h>
-                        <h className='price_buy_box'>{"$" + price}</h>
+                <div className="box_buy-background">
+                    <div className='space_full_box_buy'>
+                        <div className='total_price_space'>
+                            <h>{"Total:"}</h>
+                            <h className='price_buy_box'>{"$" + price}</h>
+                        </div>
+                        <button className='checkout_buttom' > Checkout</button>
+                        <a className='continue_shopping_a' href="/">continue shopping</a>
                     </div>
-                    <button className='checkout_buttom' > checkout</button>
-                    <a className='continue_shopping_a' href="/">continue shopping</a>
                 </div>
                 <StepsBuy />
             </div>
@@ -27,19 +29,19 @@ function BuyDesktop({ price }) {
                 <StepsBuy />
                 <div className='space_full_box_buy'>
                     <div className='total_price_space'>
-                        <h>{"Total"}</h>
+                        <h>{"Total:"}</h>
                         <h className='price_buy_box'>{"$" + price}</h>
                     </div>
                     <a className='continue_shopping_a' href="/">continue shopping</a>
                 </div>
-                <button className='checkout_buttom' > checkout</button>
+                <button className='checkout_buttom' > Checkout</button>
             </div>
         </div>
     )
 }
 function BuyBag({ price }) {
     return (
-        <div>
+        <div className="buy-bag">
             <BuyDesktop price={price} />
             <BuyMobile price={price} />
         </div>

@@ -1,8 +1,9 @@
 import './view.css'
 import './mobile.css'
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { Products } from './products/products';
 import BuyBag from './buySpace/buy.jsx'
+import { useSelector } from 'react-redux';
 
 /**
 *@param {boolean} top define si se usara difusion en la parte superior 
@@ -47,6 +48,11 @@ function Scrollable() {
 
 export function BagWithProducts() {
     let price = 0
+    const bag = useSelector((state) => state.bag)
+    Object.values(bag.products).forEach(item => {
+        price += parseFloat(item["product"].price) * parseInt(item["count"]);
+    })
+    
     return (
         <div className='full_bag_view'>
             <h className='your_bag_text'> your bag</h>
