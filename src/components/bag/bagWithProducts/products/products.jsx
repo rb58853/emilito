@@ -3,7 +3,7 @@ import './mobile.css'
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { BagPush, BagPop, BagPushCount, ProductCount, FullCount } from "../../localStorageFunctions.js";
+import { BagPush, BagPop, BagPushCount, ProductCount } from "../../localStorageFunctions.js";
 import { SetEmpty, SetProducts } from "../../../../store/bag/functions.jsx";
 
 
@@ -15,7 +15,6 @@ export function Products() {
     })
     return result
 }
-
 
 function BagItem({ product, count }) {
     return (
@@ -46,12 +45,9 @@ function AddButton({ product, setCount }) {
     const dispatch = useDispatch();
     return <button className='add-remove-button'
         onClick={() => {
-            if (!FullCount(product)) {
-                BagPush(product);
-                SetProducts(dispatch);
-                // setCount(ProductCount(product))
-                SetEmpty(dispatch)
-            }
+            BagPush(product);
+            SetProducts(dispatch);
+            SetEmpty(dispatch)
         }
         }
     >+</button>

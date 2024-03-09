@@ -15,19 +15,6 @@ export function ProductCount(product) {
     else
         return "0"
 }
-/** 
- @param {Dictionary} product  
- @info devuelve si el producto esta al maximo de su capacidad o mayor que esta.
-*/
-export function FullCount(product) {
-    let bag_ = localStorage.getItem("bag");
-    let bag = bag_ ? JSON.parse(bag_) : {};
-
-    if (bag && product.key in bag)
-        return parseInt(bag[product.key], 10) >= parseInt(products[product.key]["aviables"], 10)
-    else
-        return false
-}
 
 export function BagProducts() {
     // let bag = JSON.parse(localStorage.getItem("bag"))
@@ -54,27 +41,39 @@ export function BagPushCount(item, count) {
     let bag_ = localStorage.getItem("bag")
     let bag = bag_ ? JSON.parse(bag_) : {};
 
-    if (count == "" || count == "0")
-        delete bag[item.key]
-    else
-        bag[item.key] = count;
-    localStorage.setItem('bag', JSON.stringify(bag))
+    if (count == "")
+        count = "0"
+
+    if (IsAviableCapacity(item, count)) {
+        if (count == "0")
+            delete bag[item.key]
+        else
+            bag[item.key] = count;
+        localStorage.setItem('bag', JSON.stringify(bag))
+        return true;
+    }
+    else {
+
+    }
 }
 
-export function BagPush(item, setCount = null) {
+export function BagPush(item) {
     let bag_ = localStorage.getItem("bag")
     let bag = bag_ ? JSON.parse(bag_) : {};
 
-    if (bag && item.key in bag) {
-        bag[item.key] = (parseInt(bag[item.key], 10) + 1).toString();
+    if (!FullCount(item)) {
+        if (bag && item.key in bag) {
+            bag[item.key] = (parseInt(bag[item.key], 10) + 1).toString();
+        }
+        else {
+            if (!bag)
+                bag = {}
+            bag[item.key] = "1";
+        }
+        localStorage.setItem('bag', JSON.stringify(bag))
+        return true
     }
-    else {
-        if (!bag)
-            bag = {}
-        bag[item.key] = "1";
-    }
-    localStorage.setItem('bag', JSON.stringify(bag))
-    return true
+    return false
 }
 
 export function BagPop(item) {
@@ -93,3 +92,20 @@ export function BagPop(item) {
     localStorage.setItem('bag', JSON.stringify(bag))
 }
 
+function IsAviableCapacity(product, count) {
+    return parseInt(count, 10) <= parseInt(products[product.key]["aviables"], 10)
+}
+
+/** 
+ @param {Dictionary} product  
+ @info devuelve si el producto esta al maximo de su capacidad o mayor que esta.
+*/
+function FullCount(product) {
+    let bag_ = localStorage.getItem("bag");
+    let bag = bag_ ? JSON.parse(bag_) : {};
+
+    if (bag && product.key in bag)
+        return parseInt(bag[product.key], 10) >= parseInt(products[product.key]["aviables"], 10)
+    else
+        return (parseInt(products[product.key]["aviables"], 10) >= 1)
+}

@@ -1,7 +1,7 @@
 import './ProductView.css'
 import './mobile.css'
 import React, { useState } from 'react';
-import { BagPush, FullCount, ProductCount } from '../../bag/localStorageFunctions';
+import { BagPush, ProductCount } from '../../bag/localStorageFunctions';
 import { SetEmpty } from '../../../store/bag/functions';
 import { UseDispatch, useDispatch } from 'react-redux';
 
@@ -147,11 +147,9 @@ function ProductView({ product }) {
                     <button
                         className='add_bag'
                         onClick={() => {
-                            if (!FullCount(product)) {
-                                BagPush(product);
-                                setCount(ProductCount(product));
-                                SetEmpty(dispatch);
-                            }
+                            BagPush(product);
+                            setCount(ProductCount(product));
+                            SetEmpty(dispatch);
                         }
                         }
                     >
