@@ -16,7 +16,6 @@ export function Products() {
     return result
 }
 
-/*Los hook estos tienen bug, sera algun tipo de hash que usan o algo, pero cuando o usas bien orientado a objetos da problemas, en este caso cuando se elimina un producto el count del proximo se ajusta al que se elimino, el count como hook */
 
 function BagItem({ product, count }) {
     return (
@@ -74,42 +73,36 @@ function RemoveButton({ product, setCount }) {
 function TextProductCount({ product, selfCount }) {
     const dispatch = useDispatch();
     const inputRef = useRef();
-    const [count, setCount] = useState(selfCount)
-    const [setingCount, setSetingCount] = useState(false)
+    const [inChangeCount, setInChangeCount] = useState(false)
 
     return (
         <div className='item-count-space'>
             <text
-                className={`item-count-text ${setingCount ? 'hide' : ''}`}
+                className={`item-count-text ${inChangeCount ? 'hide' : ''}`}
             >
                 {selfCount}
             </text>
 
             <input
                 type="number"
-                className={`input-bag-item-count ${setingCount ? '' : 'hide'}`}
-                value={count}
+                className={`input-bag-item-count ${inChangeCount ? '' : 'hide'}`}
                 ref={inputRef}
-                onClick={() => {
-                    setSetingCount(true);
-                    setCount(ProductCount(product))
+                onClick={(x) => {
+                    setInChangeCount(true);
+                    x.target.value = ProductCount(product)
                 }}
-                onInput={x => {
-                    setCount(x.target.value)
-                }
-                }
                 onBlur={x => {
                     BagPushCount(product, x.target.value);
                     SetProducts(dispatch);
                     SetEmpty(dispatch);
-                    setSetingCount(false);
+                    setInChangeCount(false);
                 }}
                 onKeyDown={event => {
                     if (event.key == "Enter") {
                         BagPushCount(product, event.target.value);
                         SetProducts(dispatch);
                         SetEmpty(dispatch);
-                        setSetingCount(false);
+                        setInChangeCount(false);
                         inputRef.current.blur();
                     }
                 }}

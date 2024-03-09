@@ -13,11 +13,11 @@
 
     .scrollable_container_BagView {
         position: static;
-        pointer-events: none;
+        /* pointer-events: none; */
     }
 
     .scrollable_BagView {
-        pointer-events: none;
+        /* pointer-events: none; */
         position: static;
     }
 
