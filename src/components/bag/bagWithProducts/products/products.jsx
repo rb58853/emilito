@@ -1,14 +1,16 @@
 import './products.css'
 import './mobile.css'
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { BagPush, BagPop, BagPushCount, ProductCount } from "../../localStorageFunctions.js";
 import { SetEmpty, SetProducts } from "../../../../store/bag/functions.jsx";
+import { SetProductAlert, SetAlert, UnSetAlert, UnSetProductAlert } from '../../../../store/notAviableProducCount/functions.jsx';
 
 
 export function Products() {
     const bag = useSelector((state) => state.bag)
+
     let products = bag.products
     let result = Object.values(products).map(item => {
         return <BagItem product={item["product"]} count={item["count"]} />
@@ -41,11 +43,16 @@ function BagItem({ product, count }) {
     )
 }
 
-function AddButton({ product, setCount }) {
+function AddButton({ product }) {
     const dispatch = useDispatch();
     return <button className='add-remove-button'
         onClick={() => {
-            BagPush(product);
+            if (!BagPush(product)) {
+                SetProductAlert(dispatch, product)
+                SetAlert(dispatch)
+                setTimeout(() => { UnSetAlert(dispatch) }, 2000)
+            }
+
             SetProducts(dispatch);
             SetEmpty(dispatch)
         }
@@ -53,7 +60,7 @@ function AddButton({ product, setCount }) {
     >+</button>
 }
 
-function RemoveButton({ product, setCount }) {
+function RemoveButton({ product }) {
     const dispatch = useDispatch();
     return <button className='add-remove-button'
         onClick={() => {

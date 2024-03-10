@@ -7,7 +7,7 @@ const BottomBar = () => {
             <div>
                 <div className='links' >
                     <a className='about' href="/about"> About </a>
-                    <a className='terms' href="/contact"> Terms & conditions </a>
+                    <a className='terms' href="/terms"> Terms & conditions </a>
                     <a className='contact' href="/contact"> Contact </a>
                 </div>
                 <p className='copyright'> Copyright C 2024 Emilio Ramos Shop</p>

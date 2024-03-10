@@ -38,6 +38,10 @@ const routes = [
     {
         path: "/shop",
         element: <App content={<SerieProducts serie={all} />} />,
+    },
+    {
+        path: "/serie-all",
+        element: <App content={<SerieProducts serie={all} />} />,
     }
     
 ]

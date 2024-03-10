@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 import './style/style.css'
 import './style/config.css'
-// import { CleanBag } from './components/bag/BagFunctions.js';
-// StartBag()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -10,7 +10,8 @@ function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSel
   })
 
   return (
-    <button className='dropdown_item'
+    <a className='dropdown_item'
+      // href = {"serie-"+ serie.key}
       onClick={() => {
         setSelfItems(serieProducts);
         setSelfName(serie.name);
@@ -19,7 +20,7 @@ function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSel
       }}
     >
       {serie.name}
-    </button>
+    </a>
   )
 }
 

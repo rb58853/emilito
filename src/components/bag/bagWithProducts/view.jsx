@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Products } from './products/products';
 import BuyBag from './buySpace/buy.jsx'
 import { useSelector } from 'react-redux';
+import AlertMessage from '../../alertMessage/aviableProduct.jsx';
 
 /**
 *@param {boolean} top define si se usara difusion en la parte superior 
@@ -52,10 +53,12 @@ export function BagWithProducts() {
     Object.values(bag.products).forEach(item => {
         price += parseFloat(item["product"].price) * parseInt(item["count"]);
     })
-    
+    price = price.toFixed(2)
+
     return (
         <div className='full_bag_view'>
             <h className='your_bag_text'> your bag</h>
+            <AlertMessage />
             {/* {JSON.parse(localStorage.getItem("bag"))['p1']} */}
             <div className='bag_view'>
                 <div className='box_bags'>

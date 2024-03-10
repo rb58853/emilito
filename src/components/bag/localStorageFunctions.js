@@ -53,7 +53,9 @@ export function BagPushCount(item, count) {
         return true;
     }
     else {
-
+        bag[item.key] = products[item.key]["aviables"];
+        localStorage.setItem('bag', JSON.stringify(bag));
+        return false
     }
 }
 
@@ -107,5 +109,5 @@ function FullCount(product) {
     if (bag && product.key in bag)
         return parseInt(bag[product.key], 10) >= parseInt(products[product.key]["aviables"], 10)
     else
-        return (parseInt(products[product.key]["aviables"], 10) >= 1)
+        return (parseInt(products[product.key]["aviables"], 10) <= 0)
 }

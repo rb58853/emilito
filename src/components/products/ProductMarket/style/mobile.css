@@ -1,7 +1,9 @@
 @media(max-width:800px) {
     .box-product {
         background-color: rgba(0, 0, 0, 0.112);
-        overflow:visible;
+        overflow: visible;
+        /* background-color: red; */
+        /* aspect-ratio: auto; */
     }
 
     .info_container {
@@ -10,8 +12,10 @@
         opacity: 1;
         transform: translateY(0%);
         position: static;
+        /* min-height: 0%; */
     }
-    .info_container>a{
+
+    .info_container>a {
         text-decoration: none;
     }
 }

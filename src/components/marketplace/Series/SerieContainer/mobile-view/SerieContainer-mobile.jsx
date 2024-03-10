@@ -64,25 +64,24 @@ function SerieContainerMobile({ items }) {
   useEffect(() => {
     const component = seriesRef.current.querySelectorAll('li')[currentSerie];
     if (component)
-      component.scrollIntoView({ behavior: "smooth", block: "center" });
+    // component.scrollIntoView({ behavior: "smooth", block: "center" });
+    component.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
   }, [currentSerie])
 
 
   return <div className='serie-container-mobile'>
-    {lastDeltaX}
     <div className='box-serie-container-mobile'>
       <div
         className='box-serie-mobile'
         ref={seriesRef}
 
-        // onPointerUp={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
-        onPointerDown={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
-        onPointerUp={(e) => ChangeSerieWithScroll(e, series)}
+        onTouchStart={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
+        onTouchEnd={(e) => { ChangeSerieWithScroll(e, series) }}
       >
         {series}
       </div>
 
-      <button className='right-button'
+      {/* <button className='right-button'
         onClick={() => Next(series)}
       >
         {"❱"}
@@ -93,7 +92,7 @@ function SerieContainerMobile({ items }) {
         }} >
 
         {"❰"}
-      </button>
+      </button> */}
 
     </div>
 
