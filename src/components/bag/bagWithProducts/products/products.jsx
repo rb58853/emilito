@@ -55,7 +55,7 @@ function AddButton({ product }) {
                 //Estas linea es para controlar la vida del componente de alerta
                 if (timerAlert)
                     clearTimeout(timerAlert)
-                setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2000))
+                setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2500))
                 //--------------------------------------------------------------
             }
 
@@ -101,7 +101,16 @@ function TextProductCount({ product, selfCount }) {
                     x.target.value = ProductCount(product)
                 }}
                 onBlur={x => {
-                    BagPushCount(product, x.target.value);
+                    if (!BagPushCount(product, x.target.value)) {
+                        SetProductAlert(dispatch, product)
+                        SetAlert(dispatch)
+                        //Estas linea es para controlar la vida del componente de alerta
+                        if (timerAlert)
+                            clearTimeout(timerAlert)
+                        setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2500))
+                        //--------------------------------------------------------------
+                    }
+                    
                     SetProducts(dispatch);
                     SetEmpty(dispatch);
                     setInChangeCount(false);

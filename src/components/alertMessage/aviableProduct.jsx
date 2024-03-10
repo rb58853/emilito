@@ -8,7 +8,7 @@ function AlertMessage() {
     return <text
         className={`alert-not-aviable-message ${isAlert ? '' : 'hide'}`}
     >
-        {` ${product ? "No puedes comprar mas del producto " + product.name : ""}`}
+        {` ${product ? `You cannot buy more than ${product.aviables}  units of the product ${product.name}` : ""}`}
     </text>
 }
 

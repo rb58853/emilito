@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { BagPush, ProductCount } from '../../bag/localStorageFunctions';
 import { SetEmpty } from '../../../store/bag/functions';
 import { UseDispatch, useDispatch } from 'react-redux';
+import { SetAlert, SetProductAlert, UnSetAlert } from '../../../store/notAviableProducCount/functions';
+import AlertMessage from '../../alertMessage/aviableProduct';
 
 function ChangeImage(index, set_current, set_last, current) {
     var current_image = document.getElementById('current')
@@ -135,9 +137,11 @@ function Scrollable({ product }) {
 
 function ProductView({ product }) {
     const dispatch = useDispatch()
+    const [timerAlert, setTimerAlert] = useState(null)
     let [count, setCount] = useState(ProductCount(product))
     return (
         <div className='product_view'>
+            <AlertMessage />
             <ImageComponent product={product} />
 
             <div className='box_info'>
@@ -147,7 +151,15 @@ function ProductView({ product }) {
                     <button
                         className='add_bag'
                         onClick={() => {
-                            BagPush(product);
+                            if (!BagPush(product)) {
+                                SetProductAlert(dispatch, product)
+                                SetAlert(dispatch)
+                                //Estas linea es para controlar la vida del componente de alerta
+                                if (timerAlert)
+                                    clearTimeout(timerAlert)
+                                setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2500))
+                                //--------------------------------------------------------------
+                            }
                             setCount(ProductCount(product));
                             SetEmpty(dispatch);
                         }
