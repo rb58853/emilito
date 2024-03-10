@@ -7,6 +7,7 @@ import { BagPush, BagPop, BagPushCount, ProductCount } from "../../localStorageF
 import { SetEmpty, SetProducts } from "../../../../store/bag/functions.jsx";
 import { SetProductAlert, SetAlert, UnSetAlert, UnSetProductAlert } from '../../../../store/notAviableProducCount/functions.jsx';
 
+let [timerAlert, setTimerAlert] = [null, null]
 
 export function Products() {
     const bag = useSelector((state) => state.bag)
@@ -19,6 +20,7 @@ export function Products() {
 }
 
 function BagItem({ product, count }) {
+    [timerAlert, setTimerAlert] = useState(null)
     return (
         <a className='bag-item'
         // href=''
@@ -50,7 +52,11 @@ function AddButton({ product }) {
             if (!BagPush(product)) {
                 SetProductAlert(dispatch, product)
                 SetAlert(dispatch)
-                setTimeout(() => { UnSetAlert(dispatch) }, 2000)
+                //Estas linea es para controlar la vida del componente de alerta
+                if (timerAlert)
+                    clearTimeout(timerAlert)
+                setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2000))
+                //--------------------------------------------------------------
             }
 
             SetProducts(dispatch);
