@@ -6,10 +6,9 @@ import { useEffect, useRef, useState } from 'react';
 
 let [currentSerie, setCurrentSerie] = [null, null]
 let [lastDeltaX, setLastDeltaX] = [null, null];
-let [currentDeltaX, setCurrentDeltaX] = [null, null];
 
 function ChangeSerie(index) {
-  setCurrentSerie(index)
+  // setCurrentSerie(index)
 }
 
 function Next(series) {
@@ -49,7 +48,6 @@ function ChangeSerieWithScroll(e, series) {
 function SerieContainerMobile({ items }) {
   [currentSerie, setCurrentSerie] = useState(0);
   [lastDeltaX, setLastDeltaX] = useState(0);
-  [currentDeltaX, setCurrentDeltaX] = useState(0);
 
   const seriesRef = useRef()
   let series = Object.values(items).map((item, index) => {
@@ -63,9 +61,17 @@ function SerieContainerMobile({ items }) {
 
   useEffect(() => {
     const component = seriesRef.current.querySelectorAll('li')[currentSerie];
-    if (component)
-    // component.scrollIntoView({ behavior: "smooth", block: "center" });
-    component.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+    if (component) {
+      const container = component.parentNode;
+      const componentRect = component.getBoundingClientRect();
+      //Se usa +10 ya que el contenedor flex tiene gap = 10px
+      const offsetLeft = (componentRect.width + 10) * currentSerie;
+      container.scrollTo({
+        left: offsetLeft,
+        behavior: 'smooth'
+      });
+    }
   }, [currentSerie])
 
 

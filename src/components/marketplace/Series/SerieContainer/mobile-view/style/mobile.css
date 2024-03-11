@@ -25,13 +25,18 @@
         gap: 10px;
         cursor: pointer;
 
+        
         /*Oculatar las barras de scroll*/
-        -ms-overflow-style: none; /* IE y Edge */
-        scrollbar-width: none; /* Firefox */;
+        /* IE y Edge */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
+        ;
     }
+
     .box-serie-mobile::-webkit-scrollbar {
         display: none;
-       }
+    }
 
     .box-serie-mobile .serie_image_container {
         width: 100%;
