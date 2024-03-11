@@ -8,7 +8,7 @@ let [currentSerie, setCurrentSerie] = [null, null]
 let [lastDeltaX, setLastDeltaX] = [null, null];
 
 function ChangeSerie(index) {
-  // setCurrentSerie(index)
+  setCurrentSerie(index)
 }
 
 function Next(series) {

@@ -16,7 +16,7 @@ let all = {
     key: 'all',
     name: "all",
     products: Object.keys(products).map(key => { return key })
-  }
+}
 
 const routes = [
     {
@@ -25,15 +25,19 @@ const routes = [
     },
     {
         path: "/bag",
-        element: <App content={<BagView/>} />,
+        element: <App content={<BagView step={1} />} />,
+    },
+    {
+        path: "/bag-details",
+        element: <App content={<BagView step={2} />} />,
     },
     {
         path: "/about",
-        element: <App content={<About/>} />,
+        element: <App content={<About />} />,
     },
     {
         path: "/terms",
-        element: <App content={<Terms/>} />,
+        element: <App content={<Terms />} />,
     },
     {
         path: "/shop",
@@ -43,7 +47,7 @@ const routes = [
         path: "/serie-all",
         element: <App content={<SerieProducts serie={all} />} />,
     }
-    
+
 ]
 
 

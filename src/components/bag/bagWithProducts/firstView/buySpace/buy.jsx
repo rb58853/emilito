@@ -1,6 +1,6 @@
 import "./buy.css"
 import "./mobile.css"
-import StepsBuy from "./stepsBuy/StepsBuy"
+import StepsBuy from "../../stepsBuy/StepsBuy"
 
 function BuyMobile({ price }) {
     return (
@@ -12,7 +12,14 @@ function BuyMobile({ price }) {
                             <h>{"Total:"}</h>
                             <h className='price_buy_box'>{"$" + price}</h>
                         </div>
-                        <button className='checkout_buttom' > Checkout</button>
+
+                        <a
+                            href="/bag-details"
+                            className='checkout_buttom'
+                        >
+                            Checkout
+                        </a>
+
                         <a className='continue_shopping_a' href="/">continue shopping</a>
                     </div>
                 </div>

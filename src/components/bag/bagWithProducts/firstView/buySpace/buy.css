@@ -50,6 +50,8 @@
 
 
 .checkout_buttom {
+    text-decoration: none;
+    color: black;
     background-color: white;
     border: none;
     margin-top: 5px;

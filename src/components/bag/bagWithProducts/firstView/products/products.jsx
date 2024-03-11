@@ -3,9 +3,9 @@ import './mobile.css'
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { BagPush, BagPop, BagPushCount, ProductCount } from "../../localStorageFunctions.js";
-import { SetEmpty, SetProducts } from "../../../../store/bag/functions.jsx";
-import { SetProductAlert, SetAlert, UnSetAlert, UnSetProductAlert } from '../../../../store/notAviableProducCount/functions.jsx';
+import { BagPush, BagPop, BagPushCount, ProductCount } from "../../../localStorageFunctions.js";
+import { SetEmpty, SetProducts } from "../../../../../store/bag/functions.jsx";
+import { SetProductAlert, SetAlert, UnSetAlert, UnSetProductAlert } from '../../../../../store/notAviableProducCount/functions.jsx';
 
 let [timerAlert, setTimerAlert] = [null, null]
 
