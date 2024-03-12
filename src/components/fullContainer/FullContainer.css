@@ -1,4 +1,4 @@
-.full-container{
+.full-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,9 @@
     margin-bottom: 140px;
     margin-left: 5%;
     margin-right: 5%;
-    /* background-color: rgba(0, 8, 255, 0.458); */
-    width: 90%;
-    max-width: 130vh;
+    /* background-color: rgba(0, 8, 255, 0.137); */
+    width: 80%;
+    max-width: 100%;
+    /* max-width: min(130vh, 100%); */
+    min-height: calc(100vh - 200px);
 }
