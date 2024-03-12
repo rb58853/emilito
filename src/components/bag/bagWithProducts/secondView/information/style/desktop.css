@@ -2,6 +2,7 @@
     max-width: min(50%,800px);
     min-width: 0px;
     flex-grow: 1;
+    margin-left: auto;
     /* background-color: rgba(255, 255, 255, 0.308); */
 }
 

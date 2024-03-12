@@ -1,14 +1,27 @@
+.bag-details-section {
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    
+}
+
+
 .bag-details {
     /* position: relative; */
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 7, 65, 0.89); */
+    /* background-color: rgba(0, 7, 65, 0.514); */
     display: flex;
     font-size: 120%;
     place-content: center;
     place-items: center;
-    gap: 10%;
     place-self: end;
     align-self: flex-end;
     justify-self: flex-end;
-}
+   }

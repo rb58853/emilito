@@ -47,6 +47,14 @@ function BuyBox2() {
                     </text>
                 </div>
             </div>
+            <div className='total-cost-row'>
+                <div>
+                    Total:
+                    <text>
+                        {"$" + subtotal}
+                    </text>
+                </div>
+            </div>
         </div>
     )
 }

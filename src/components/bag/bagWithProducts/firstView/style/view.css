@@ -37,6 +37,7 @@
     flex-direction: column;
     min-width: 40%;
     height: 100%;
+    flex-grow: 1;
     /* background-color: pink; */
 }
 
