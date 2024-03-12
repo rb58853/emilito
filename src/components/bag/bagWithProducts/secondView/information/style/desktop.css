@@ -1,0 +1,56 @@
+.information {
+    max-width: min(50%,800px);
+    min-width: 0px;
+    flex-grow: 1;
+    /* background-color: rgba(255, 255, 255, 0.308); */
+}
+
+.header-in-info {
+    /* margin-top: 0px; */
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.email-space {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.shipping-space {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-info {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 90%;
+    min-width: 0px;
+    flex-grow: 1;
+}
+.input-info:focus{
+    outline: none;
+}
+
+.shipping-row {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.input-space {
+    display: flex;
+    flex-direction: column;
+    min-width: 40px;
+    flex-grow: 1;
+}
+
+.input-space>text {
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
