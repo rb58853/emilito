@@ -1,5 +1,6 @@
 import './menu.css'
 import './mobile.css'
+import { Link } from 'react-router-dom'
 
 export function Menu({ showMenu, setShowMenu }) {
     return <section>
@@ -7,27 +8,35 @@ export function Menu({ showMenu, setShowMenu }) {
         <div className={`menu ${showMenu ? 'show' : ''}`}>
             <button className='close-menu'
                 onClick={() => setShowMenu(false)}
-            >   
+            >
                 <img
                     className='close-image'
                     src="images/icons/close1.png" alt="" />
             </button>
 
             <section className='menu-refs'>
-                <a href="/shop">
+                <Link to="/shop"
+                    onClick={() => setShowMenu(false)}
+                >
                     Shop
-                </a>
-                <a href="/about">
+                </Link>
+                <Link to="/about"
+                    onClick={() => setShowMenu(false)}
+                >
                     About
-                </a>
-                <a href="/terms">
+                </Link>
+                <Link to="/terms"
+                    onClick={() => setShowMenu(false)}
+                >
                     Terms & conditions
-                </a>
-                <a href="/contact">
+                </Link>
+                <Link to="/contact"
+                    onClick={() => setShowMenu(false)}
+                >
                     Contact
-                </a>
+                </Link>
             </section>
         </div>
-        <div className={`menu-background ${showMenu? 'active':''}`}></div>
+        <div className={`menu-background ${showMenu ? 'active' : ''}`}></div>
     </section>
 }

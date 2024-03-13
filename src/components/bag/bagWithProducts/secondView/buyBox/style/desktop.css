@@ -1,13 +1,17 @@
 .buy-box-2 {
     flex-grow: 1;
     min-width: min(max(200px, 20vh), 40%);
-    width: min(max(400px, 30vh), 45%);
-    max-width: min(max(400px, 30vh), 45%);
+    width: min(max(400px, 30vh), 100%);
+    max-width: min(min(400px, 35vh), 100%);
     /* background-color: rgb(94, 73, 255); */
     margin-left: auto;
     display: flex;
     flex-direction: column;
     gap: 7px;
+}
+
+.buy-box-2-mobile{
+    display: none;
 }
 
 .order-sumary-button {

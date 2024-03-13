@@ -6,6 +6,7 @@ function StepsBuy({ step = 0 }) {
             <div className='step_buy'>
                 <img className='step_buy_image' src="images/icons/White_Circle.png" alt="" />
                 {step == 0 && <img className='step_buy_active' src="images/icons/red.png" alt="" />}
+                {step > 0 && <img className='step_buy_pass' src="images/icons/Black_Circle.png" alt="" />}
             </div>
             <p className='step_text'>
                 Cart
@@ -18,6 +19,7 @@ function StepsBuy({ step = 0 }) {
             <div className='step_buy'>
                 <img className='step_buy_image' src="images/icons/White_Circle.png" alt="" />
                 {step == 1 && <img className='step_buy_active' src="images/icons/red.png" alt="" />}
+                {step > 1 && <img className='step_buy_pass' src="images/icons/Black_Circle.png" alt="" />}
             </div>
             <p className='step_text'>
                 Details

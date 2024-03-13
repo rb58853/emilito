@@ -1,5 +1,6 @@
 @media (max-width:800px) {
     .bag-details {
         flex-direction: column;
+        font-size: 80%;
     }
 }

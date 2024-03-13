@@ -3,24 +3,22 @@ import React, { useState } from 'react';
 import series from "../../../../data/static_series.js";
 import products from "../../../../data/static_products.js"
 import ProductContainer from '../../Products/ProductContainer.jsx';
+import { Link } from "react-router-dom";
 
-function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSelfSerie }) {
-  let serieProducts = serie.products.map(product_key => {
-    return products[product_key]
-  })
+function SerieButtom({ serie, setShowDropdown }) {
+  // let serieProducts = serie.products.map(product_key => {
+  //   return products[product_key]
+  // })
 
   return (
-    <a className='dropdown_item'
-      // href = {"serie-"+ serie.key}
+    <Link className='dropdown_item'
+      to={"/serie-" + serie.key}
       onClick={() => {
-        setSelfItems(serieProducts);
-        setSelfName(serie.name);
         setShowDropdown(false);
-        setSelfSerie(serie);
       }}
     >
       {serie.name}
-    </a>
+    </Link>
   )
 }
 
@@ -31,7 +29,7 @@ function SerieButtom({ serie, setSelfItems, setSelfName, setShowDropdown, setSel
  * @info recibe una serie para devolver la lista de series(en modo botones) que no coincidan con la misma
 **/
 
-function SetAviableSeries(serie, setSelfItems, setSelfName, setShowDropdown, setAviableSeries, setSelfSerie) {
+function AviableSeries({ serie, setShowDropdown }) {
 
   let all = {
     key: 'all',
@@ -41,17 +39,16 @@ function SetAviableSeries(serie, setSelfItems, setSelfName, setShowDropdown, set
   }
 
   let aviableSeries = [
-    serie.key != 'all' && <SerieButtom serie={all} setSelfItems={setSelfItems} setSelfName={setSelfName} setShowDropdown={setShowDropdown} setSelfSerie={setSelfSerie} />
+    serie.key != 'all' && <SerieButtom serie={all} setShowDropdown={setShowDropdown} />
   ]
 
-  Object.values(series).map(selfSerie => {
-    return serie.key != selfSerie.key && <SerieButtom serie={selfSerie} setSelfItems={setSelfItems} setSelfName={setSelfName} setShowDropdown={setShowDropdown} setSelfSerie={setSelfSerie} />
+  Object.values(series).map(serieItem => {
+    return serie.key != serieItem.key && <SerieButtom serie={serieItem} setShowDropdown={setShowDropdown} />
   }).forEach(product => {
     aviableSeries.push(product);
   })
 
-
-  setAviableSeries(aviableSeries);
+  return aviableSeries;
 }
 
 /**
@@ -63,36 +60,30 @@ function SerieProducts({ serie }) {
   })
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const [selfName, setSelfName] = useState(serie.name)
-  const [selfItems, setSelfItems] = useState(serieProducts)
-  const [selfSerie, setSelfSerie] = useState(serie)
-
-  let [aviableSeries, setAviableSeries] = useState(null)
-
+  let name = serie.name
 
   return (
     <div>
       <div className='serie_select_space'>
-        <p className='text_border'>{selfName}</p>
+        <p className='text_border'>{name}</p>
         <div className='dropdown'>
 
           <button className='dropdown_item'
             onClick={() => {
               showDropdown ? setShowDropdown(false) : setShowDropdown(true);
-              SetAviableSeries(selfSerie, setSelfItems, setSelfName, setShowDropdown, setAviableSeries, setSelfSerie)
             }}
           >
-            {selfName}
+            {name}
           </button>
 
           <hr className='line' />
           <div className={`dropdown_options ${showDropdown ? 'show' : ''}`}>
-            {aviableSeries}
+            <AviableSeries serie={serie} setShowDropdown={setShowDropdown} />
           </div>
         </div>
       </div>
 
-      <ProductContainer items={selfItems} name={selfName} />
+      <ProductContainer items={serieProducts} name={name} />
     </div>
   )
 }
