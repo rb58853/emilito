@@ -3,7 +3,7 @@
     gap: 10px;
     width: 100%;
     max-width: 60vh;
-    background-color: blue;
+    /* background-color: blue; */
     cursor: pointer;
     color: black;
     text-decoration: none;
@@ -16,7 +16,7 @@
 
 .bag-item.delete {
     height: 0vh;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .bag-item-image-container {
