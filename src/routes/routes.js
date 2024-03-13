@@ -1,5 +1,6 @@
 
 import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import App from '../App.jsx';
 
 import products from "../data/static_products.js";
@@ -65,4 +66,5 @@ Object.keys(series).forEach((key) => {
     });
 });
 
-export const router = createBrowserRouter(routes)
+// export const router = createBrowserRouter(routes)
+export const router = createHashRouter(routes)
