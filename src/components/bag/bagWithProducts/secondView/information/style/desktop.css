@@ -1,5 +1,6 @@
 .information {
     max-width: min(50%,800px);
+    width: 100%;
     min-width: 0px;
     flex-grow: 1;
     margin-left: auto;
@@ -31,7 +32,6 @@
     padding: 10px;
     font-size: 90%;
     min-width: 0px;
-    flex-grow: 1;
 }
 .input-info:focus{
     outline: none;
@@ -40,8 +40,9 @@
 .shipping-row {
     display: flex;
     width: 100%;
-    gap: 30px;
+    gap: min(30px,3%);
     margin-bottom: 10px;
+    flex-grow: 1;
 }
 
 .input-space {
@@ -49,6 +50,7 @@
     flex-direction: column;
     min-width: 40px;
     flex-grow: 1;
+    margin-top: auto;
 }
 
 .input-space>text {
