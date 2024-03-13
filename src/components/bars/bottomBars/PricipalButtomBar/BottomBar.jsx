@@ -11,7 +11,7 @@ const BottomBar = () => {
                     <Link className='terms' to="/terms"> Terms & conditions </Link>
                     <Link className='contact' to="/contact"> Contact </Link>
                 </div>
-                <p className='copyright'> Copyright C 2024 Emilio Ramos Shop</p>
+                <p className='copyright'> Copyright © 2024 Emilio Ramos Shop</p>
             </div>
         </div>
     );
