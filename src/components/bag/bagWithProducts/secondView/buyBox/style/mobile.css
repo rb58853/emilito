@@ -1,0 +1,13 @@
+@media (max-width:800px) {
+    .buy-box-2 {
+        flex-grow: 1;
+        width: 100%;
+        min-width: 0px;
+        max-width: 100%;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        flex-direction: column;
+        gap: 7px;
+    }
+}

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import StepsBuy from '../../stepsBuy/StepsBuy'
 import './style/desktop.css'
+import './style/mobile.css'
 
 function BuyBox2() {
     let subtotal = 0
