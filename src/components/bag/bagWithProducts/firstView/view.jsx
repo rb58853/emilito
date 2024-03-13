@@ -23,7 +23,6 @@ function Vinnete({ top = false, bottom = false }) {
 function Scrollable() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollable, setIsScrollable] = useState(true);
-    // [products, setProducts] = useState(Products)
 
     const handleScroll = (e) => {
         const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -40,7 +39,7 @@ function Scrollable() {
             <div className='scrollable_BagView'
                 onScroll={handleScroll}
             >
-                {Products()}
+                <Products/>
             </div>
         </div>
     );
