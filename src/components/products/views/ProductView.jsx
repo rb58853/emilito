@@ -2,7 +2,7 @@ import './ProductView.css'
 import './mobile.css'
 import React, { useState } from 'react';
 import { BagPush, ProductCount } from '../../bag/localStorageFunctions';
-import { SetEmpty } from '../../../store/bag/functions';
+import { SetEmpty, SetProducts } from '../../../store/bag/functions';
 import { UseDispatch, useDispatch } from 'react-redux';
 import { SetAlert, SetProductAlert, UnSetAlert } from '../../../store/notAviableProducCount/functions';
 import AlertMessage from '../../alertMessage/aviableProduct';
@@ -162,6 +162,7 @@ function ProductView({ product }) {
                             }
                             setCount(ProductCount(product));
                             SetEmpty(dispatch);
+                            SetProducts(dispatch);
                         }
                         }
                     >
