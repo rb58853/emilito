@@ -1,6 +1,7 @@
 import BuyBox2 from "./buyBox/buyBox2";
 import Information from "./information/information";
 import './style/desktop.css'
+import './style/mobile.css'
 import './../../../../style/style.css'
 
 function BagSecondView() {
