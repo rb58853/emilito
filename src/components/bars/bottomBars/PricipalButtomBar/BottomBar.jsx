@@ -1,14 +1,15 @@
 import './style/desktop.css';
 import './style/mobile.css'
+import { Link } from 'react-router-dom'
 
 const BottomBar = () => {
     return (
         <div className="bottom_bar">
             <div>
                 <div className='links' >
-                    <a className='about' href="/about"> About </a>
-                    <a className='terms' href="/terms"> Terms & conditions </a>
-                    <a className='contact' href="/contact"> Contact </a>
+                    <Link className='about' to="/about"> About </Link>
+                    <Link className='terms' to="/terms"> Terms & conditions </Link>
+                    <Link className='contact' to="/contact"> Contact </Link>
                 </div>
                 <p className='copyright'> Copyright C 2024 Emilio Ramos Shop</p>
             </div>

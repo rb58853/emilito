@@ -66,5 +66,5 @@ Object.keys(series).forEach((key) => {
     });
 });
 
-export const router = createBrowserRouter(routes)
-// export const router = createHashRouter(routes)
+// export const router = createBrowserRouter(routes)
+export const router = createHashRouter(routes)
