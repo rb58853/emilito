@@ -1,5 +1,7 @@
 import './emptyBag.css'
 import './mobile.css'
+import { Link } from 'react-router-dom'
+
 export function EmptyBag() {
     return (
         <div className='empty-bag'>
@@ -7,11 +9,11 @@ export function EmptyBag() {
                 Your bag is empty
             </text>
             <img className="icon-bag-bagView" src="images/icons/shop.png" alt="" />
-            <a className='button-start-shopping'
-                href='/'
+            <Link className='button-start-shopping'
+                to='/'
             >
                 Start shopping
-            </a>
+            </Link>
         </div>
     )
 }

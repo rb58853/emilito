@@ -2,6 +2,7 @@ import './products.css'
 import './mobile.css'
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { BagPush, BagPop, BagPushCount, ProductCount } from "../../../localStorageFunctions.js";
 import { SetEmpty, SetProducts } from "../../../../../store/bag/functions.jsx";
@@ -22,8 +23,8 @@ export function Products() {
 function BagItem({ product, count }) {
     [timerAlert, setTimerAlert] = useState(null)
     return (
-        <a className='bag-item'
-        // href=''
+        <Link className='bag-item'
+        // to=''
         >
             <div className='bag-item-image-container'>
                 <img className='bag-item-image'
@@ -41,7 +42,7 @@ function BagItem({ product, count }) {
                     <AddButton product={product} />
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 

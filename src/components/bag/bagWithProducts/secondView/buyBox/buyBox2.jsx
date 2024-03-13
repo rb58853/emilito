@@ -3,17 +3,17 @@ import StepsBuy from '../../stepsBuy/StepsBuy'
 import './style/desktop.css'
 import './style/mobile.css'
 import '../../../../../style/style.css'
-
+import { Link } from 'react-router-dom'
 
 function DesktopBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2 buy-box-2-desktop">
             <StepsBuy step={1} />
-            <a className='order-sumary-button'
-                href=''
+            <Link className='order-sumary-button'
+                to=''
             >
                 Order Sumary
-            </a>
+            </Link>
             <div className='notes'>
                 <div>
                     <text>

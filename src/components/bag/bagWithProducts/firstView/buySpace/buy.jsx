@@ -1,6 +1,7 @@
 import "./buy.css"
 import "./mobile.css"
 import StepsBuy from "../../stepsBuy/StepsBuy"
+import { Link } from "react-router-dom"
 
 function BuyMobile({ price }) {
     return (
@@ -13,14 +14,14 @@ function BuyMobile({ price }) {
                             <h className='price_buy_box'>{"$" + price}</h>
                         </div>
 
-                        <a
-                            href="/bag-details"
+                        <Link
+                            to="/bag-details"
                             className='checkout_buttom'
                         >
                             Checkout
-                        </a>
+                        </Link>
 
-                        <a className='continue_shopping_a' href="/">continue shopping</a>
+                        <Link className='continue_shopping_a' to="/">continue shopping</Link>
                     </div>
                 </div>
                 <StepsBuy />
@@ -39,14 +40,14 @@ function BuyDesktop({ price }) {
                         <h>{"Total:"}</h>
                         <h className='price_buy_box'>{"$" + price}</h>
                     </div>
-                    <a className='continue_shopping_a' href="/">continue shopping</a>
+                    <Link className='continue_shopping_a' to="/">continue shopping</Link>
                 </div>
-                <a
-                    href="/bag-details"
+                <Link
+                    to="/bag-details"
                     className='checkout_buttom'
                 >
                     Checkout
-                </a>
+                </Link>
             </div>
         </div>
     )
