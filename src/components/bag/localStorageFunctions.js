@@ -81,17 +81,20 @@ export function BagPush(item) {
 export function BagPop(item) {
     let bag = JSON.parse(localStorage.getItem("bag"))
     let key = item.key
-
+    
     if (bag && key in bag) {
         if (parseInt(bag[key], 10) > 1) {
             bag[key] = (parseInt(bag[key], 10) - 1).toString();
+            localStorage.setItem('bag', JSON.stringify(bag))
+            return true
         }
         else {
             delete bag[key];
+            localStorage.setItem('bag', JSON.stringify(bag))
+            return false
         }
     }
 
-    localStorage.setItem('bag', JSON.stringify(bag))
 }
 
 function IsAviableCapacity(product, count) {

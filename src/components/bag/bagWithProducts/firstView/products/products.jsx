@@ -11,20 +11,24 @@ import { SetProductAlert, SetAlert, UnSetAlert, UnSetProductAlert } from '../../
 let [timerAlert, setTimerAlert] = [null, null]
 
 export function Products() {
-    const bag = useSelector((state) => state.bag)
+    const products = useSelector((state) => state.bag).products
 
-    let products = bag.products
     let result = Object.values(products).map(item => {
-        return <BagItem product={item["product"]} count={item["count"]} />
+        return <BagItem product={item["product"]} count={item["count"]} key={item["product"].key} />
     })
     return result
 }
 
-function BagItem({ product, count }) {
-    [timerAlert, setTimerAlert] = useState(null)
+function BagItem({ product, count, key }) {
+    [timerAlert, setTimerAlert] = useState(null);
+    // Al usar estos hooks como partes de un objeto, se le debe definir un key unico al objeto, para que de esta forma React pueda manejar correctamente los estados, de otra forma suelen ocurrir errores
+    let [willDelete, setWillDelete] = useState(false)
+
     return (
-        <Link className='bag-item'
-        // to=''
+        <Link
+            key={key}
+            className={`bag-item ${willDelete ? 'delete' : ''}`}
+            to={`/${product.key}`}
         >
             <div className='bag-item-image-container'>
                 <img className='bag-item-image'
@@ -36,11 +40,11 @@ function BagItem({ product, count }) {
                 <b className='name'>{product.name}</b>
                 <h className='price'>{"$" + product.price}</h>
 
-                <div className='add-remove-item-space'>
-                    <RemoveButton product={product} />
-                    <TextProductCount product={product} selfCount={count} />
+                <Link className='add-remove-item-space'>
+                    <RemoveButton product={product} setWillDelete={setWillDelete} />
+                    <TextProductCount product={product} selfCount={count} setWillDelete={setWillDelete}/>
                     <AddButton product={product} />
-                </div>
+                </Link>
             </div>
         </Link>
     )
@@ -67,23 +71,54 @@ function AddButton({ product }) {
     >+</button>
 }
 
-function RemoveButton({ product }) {
+function RemoveButton({ product, setWillDelete }) {
     const dispatch = useDispatch();
     return <button className='add-remove-button'
         onClick={() => {
-            BagPop(product);
-            SetProducts(dispatch)
-            // setCount(ProductCount(product))
-            SetEmpty(dispatch)
+            let willDelete = false
+            if (!BagPop(product)) {
+                willDelete = true
+                setWillDelete(true)
+                setTimeout(() => { SetProducts(dispatch) }, 500)
+                setTimeout(() => { SetEmpty(dispatch) }, 500)
+            }
+            if (!willDelete) {
+                SetEmpty(dispatch)
+                SetProducts(dispatch)
+            }
         }
         }
     >–</button>
 }
 
-function TextProductCount({ product, selfCount }) {
+function TextProductCount({ product, selfCount, setWillDelete }) {
     const dispatch = useDispatch();
     const inputRef = useRef();
     const [inChangeCount, setInChangeCount] = useState(false)
+
+    let changeValue = (x) => {
+        if (!BagPushCount(product, x.target.value)) {
+            SetProductAlert(dispatch, product)
+            SetAlert(dispatch)
+            //Estas linea es para controlar la vida del componente de alerta
+            if (timerAlert)
+                clearTimeout(timerAlert)
+            setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2500))
+            //--------------------------------------------------------------
+        }
+        if (x.target.value == '0' || x.target.value == '') {
+            setWillDelete(true)
+            setTimeout(() => { SetProducts(dispatch) }, 500)
+            setTimeout(() => { SetEmpty(dispatch) }, 500)
+        }
+        else {
+            SetProducts(dispatch);
+            SetEmpty(dispatch);
+        }
+
+
+        setInChangeCount(false);
+    }
 
     return (
         <div className='item-count-space'>
@@ -102,26 +137,11 @@ function TextProductCount({ product, selfCount }) {
                     x.target.value = ProductCount(product)
                 }}
                 onBlur={x => {
-                    if (!BagPushCount(product, x.target.value)) {
-                        SetProductAlert(dispatch, product)
-                        SetAlert(dispatch)
-                        //Estas linea es para controlar la vida del componente de alerta
-                        if (timerAlert)
-                            clearTimeout(timerAlert)
-                        setTimerAlert(setTimeout(() => { UnSetAlert(dispatch) }, 2500))
-                        //--------------------------------------------------------------
-                    }
-                    
-                    SetProducts(dispatch);
-                    SetEmpty(dispatch);
-                    setInChangeCount(false);
+                    changeValue(x)
                 }}
                 onKeyDown={event => {
                     if (event.key == "Enter") {
-                        BagPushCount(product, event.target.value);
-                        SetProducts(dispatch);
-                        SetEmpty(dispatch);
-                        setInChangeCount(false);
+                        changeValue(event)
                         inputRef.current.blur();
                     }
                 }}
