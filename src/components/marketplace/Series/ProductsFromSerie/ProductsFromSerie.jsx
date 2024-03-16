@@ -3,17 +3,16 @@ import React, { useState } from 'react';
 import series from "../../../../data/static_series.js";
 import products from "../../../../data/static_products.js"
 import ProductContainer from '../../Products/ProductContainer.jsx';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function SerieButtom({ serie, setShowDropdown }) {
-  // let serieProducts = serie.products.map(product_key => {
-  //   return products[product_key]
-  // })
+  const history = useHistory();
 
   return (
     <Link className='dropdown_item'
       to={"/serie-" + serie.key}
       onClick={() => {
+        history.replace('/')
         setShowDropdown(false);
       }}
     >

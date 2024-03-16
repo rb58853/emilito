@@ -42,7 +42,7 @@
 
     .row-cost {
         display: flex;
-        place-items: end;
+        place-items: flex-end;
         width: 100%;
         /* background-color: blueviolet; */
         height: fit-content;

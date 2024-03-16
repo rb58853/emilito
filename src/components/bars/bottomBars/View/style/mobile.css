@@ -1,8 +1,8 @@
 @media(max-width:800px) {
     .bottom-bars {
-        position:relative;
+        position: relative;
         display: flex;
-        place-content: start;
+        place-content: flex-start;
         z-index: 0;
         bottom: 0px;
         width: 100%;
