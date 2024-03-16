@@ -15,6 +15,11 @@ export function Menu({ showMenu, setShowMenu }) {
             </button>
 
             <section className='menu-refs'>
+                <Link to="/"
+                    onClick={() => setShowMenu(false)}
+                >
+                    Home
+                </Link>
                 <Link to="/shop"
                     onClick={() => setShowMenu(false)}
                 >

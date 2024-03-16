@@ -62,7 +62,7 @@ function Information() {
                         </div>
                         <div className='input-space'>
                             <text>
-                                Apartament number, suite, etc (optional)
+                                Apartament number (optional)
                             </text>
                             <input
                                 className='input-info'
