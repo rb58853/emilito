@@ -1,7 +1,7 @@
 .info-payment {
     background-color: rgb(255, 255, 255);
     width: 50%;
-    height: 100px;
+    /* height: 100px; */
 
 }
 
@@ -37,4 +37,38 @@
 .link-edit {
     color: black;
     text-decoration: none;
+}
+
+.info-payment-set {
+    background-color: rgba(165, 42, 42, 0.136);
+    margin-top: min(50px, 20%);
+}
+
+.info-payment-set>h4 {
+    margin-bottom: 10px;
+}
+
+.toggle-space {
+    display: flex;
+    place-items: center;
+    background-color: rgba(0, 0, 255, 0.288);
+    width: fit-content;
+    height: 20px;
+}
+
+.toggles-space {
+    display: flex;
+    gap: min(40px, 10%);
+    margin-bottom: min(50px, 20%);
+}
+
+.input-space.card-number {
+    min-width: 50%;
+}
+.input-space.country {
+    min-width: 60%;
+}
+.shipping-row.short{
+    min-width: min(400px,100%);
+    width: 80%;
 }

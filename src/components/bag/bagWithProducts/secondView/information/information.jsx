@@ -1,4 +1,4 @@
-import { SetAddress, SetApartamentNumber, SetCountry, SetEmail, SetLastName, SetName, SetPostalCode, SetState, SetCity, GetUser } from '../../../../../store/user/functions'
+import { SetAddress, SetApartamentNumber, SetCountry, SetEmail, SetLastName, SetName, SetPostalCode, SetCity, GetUser, SetProvince } from '../../../../../store/user/functions'
 import { SetPersistentDataFromKey } from '../../../../../store/user/persistentData'
 import './style/desktop.css'
 import './style/mobile.css'
@@ -134,10 +134,10 @@ function Information() {
                         <input
                             className='input-info'
                             type="text"
-                            value={user.satate}
+                            value={user.province}
                             onInput={(x) => {
-                                SetPersistentDataFromKey(x.target.value, 'state');
-                                SetState(dispatch);
+                                SetPersistentDataFromKey(x.target.value, 'province');
+                                SetProvince(dispatch);
                             }}
                         />
                     </div>

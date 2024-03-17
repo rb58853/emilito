@@ -1,4 +1,4 @@
-import { setUser, setName, setEmail, setAddress, setApartamentNumber, setPostalCode, setCity, setState, setCountry, setLastName } from "./userSlice";
+import { setUser, setName, setEmail, setAddress, setApartamentNumber, setPostalCode, setCity, setCountry,setProvince, setLastName } from "./userSlice";
 import { FullUser, User } from './persistentData'
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -37,8 +37,8 @@ export function SetApartamentNumber(dispatch) {
     dispatch(setApartamentNumber(User('apatament_number')));
 }
 
-export function SetState(dispatch) {
-    dispatch(setState(User('state')));
+export function SetProvince(dispatch) {
+    dispatch(setProvince(User('province')));
 }
 
 export function SetPostalCode(dispatch) {

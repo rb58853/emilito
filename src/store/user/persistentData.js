@@ -6,7 +6,7 @@ const initialUser = {
     'city': '',
     'address': '',
     'apartament_number': '',
-    'state': '',
+    'province': '',
     'postal_code': '',
 };
 export function FullUser() {
@@ -25,7 +25,7 @@ export function SetPersistentDataFromKey(value, key) {
     let user_ = localStorage.getItem("user")
     let user = user_ ? JSON.parse(user_) : initialUser
 
-    if (user && key in user)
+    if (user)
         user[key] = value;
 
     localStorage.setItem('user', JSON.stringify(user))
