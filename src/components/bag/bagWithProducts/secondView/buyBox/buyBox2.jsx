@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
 import StepsBuy from '../../stepsBuy/StepsBuy'
+import '../../../../../style/style.css'
 import './style/desktop.css'
 import './style/mobile.css'
-import '../../../../../style/style.css'
 import { Link } from 'react-router-dom'
 
 function DesktopBuyBox({ subtotal }) {
@@ -51,7 +51,7 @@ function DesktopBuyBox({ subtotal }) {
             </div>
             <Link
                 to="/bag-payment"
-                className='checkout_buttom'
+                className='checkout_buttom-details'
             >
                 Checkout
             </Link>
@@ -105,7 +105,7 @@ function MobileBuyBox({ subtotal }) {
 
                 <Link
                     to="/bag-payment"
-                    className='checkout_buttom'
+                    className='checkout_buttom-details'
                 >
                     Checkout
                 </Link>

@@ -83,14 +83,16 @@
         right: 0px;
 
     }
-    .checkout_buttom{
-        margin-top: 15px;
+    .checkout_buttom-details{
+        text-decoration: none;
+        color: black;
+        margin-top: 20px;
         background-color: rgba(0, 0, 0, 0.073);
         border-radius: 50px;
         width: fit-content;
+        padding: 7px;
         padding-inline: 40px;
         font-size: 160%;
         transition-duration: 0s;
-
     }
 }
