@@ -1,5 +1,6 @@
 import '../../../../style/style.css'
 import './style/desktop.css'
+import './style/mobile.css'
 import InformationPayment from './information/information-pyment'
 import BoxBuyPayment from './boxBuy/boxBuyPament'
 

@@ -1,5 +1,6 @@
 import '../../secondView/information/style/desktop.css'
 import './style/desktop.css'
+import './style/mobile.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { GetUser, SetCountry, SetPostalCode } from '../../../../../store/user/functions'

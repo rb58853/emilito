@@ -1,6 +1,6 @@
 .bag-payment-section{
     width: 100%;
-    background-color: rgba(137, 43, 226, 0.327);
+    /* background-color: rgba(137, 43, 226, 0.327); */
     display: flex;
     flex-direction: column;
     place-content: center;
@@ -12,5 +12,5 @@
     display: flex;
     place-content: center;
     place-items: center;
-    background-color: rgba(128, 255, 0, 0.323);
+    /* background-color: rgba(128, 255, 0, 0.323); */
 }

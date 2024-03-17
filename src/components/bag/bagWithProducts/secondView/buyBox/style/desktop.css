@@ -1,9 +1,9 @@
 .buy-box-2 {
     flex-grow: 1;
-    min-width: min(max(200px, 20vh), 40%);
+    min-width: min(200px, 40%);
     width: 500px;
     /* width: min(max(400px, 30vh), 100%); */
-    max-width: min(min(400px, 35vh), 100%);
+    max-width: min(350px, 100%);
     /* background-color: rgb(94, 73, 255); */
     margin-left: auto;
     display: flex;
@@ -15,7 +15,7 @@
     display: none;
 }
 
-.order-sumary-button {
+.order-sumary {
     font-size: 120%;
     width: 100%;
     background-color: white;
@@ -28,12 +28,6 @@
     transition-duration: 0.2s;
     transition-property: color, background-color;
     transition-timing-function: ease-in-out;
-}
-
-.order-sumary-button:hover {
-    background-color: rgb(218, 218, 218);
-    color: rgb(79, 79, 79);
-
 }
 
 .notes {
@@ -117,4 +111,8 @@
     position: absolute;
     /* right: 0px; */
     left: 70%;
+}
+.checkout_buttom{
+    height: 50px;
+    font-weight: 500;
 }

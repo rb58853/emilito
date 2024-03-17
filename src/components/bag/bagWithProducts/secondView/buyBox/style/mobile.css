@@ -1,4 +1,10 @@
 @media (max-width:800px) {
+    .buy-box-2{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+
+    }
     .buy-box-2-mobile {
         display: flex;
         flex-direction: column;
@@ -75,6 +81,16 @@
     .total-cost-row>div>text {
         left: auto;
         right: 0px;
+
+    }
+    .checkout_buttom{
+        margin-top: 15px;
+        background-color: rgba(0, 0, 0, 0.073);
+        border-radius: 50px;
+        width: fit-content;
+        padding-inline: 40px;
+        font-size: 160%;
+        transition-duration: 0s;
 
     }
 }

@@ -9,11 +9,9 @@ function DesktopBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2 buy-box-2-desktop">
             <StepsBuy step={1} />
-            <Link className='order-sumary-button'
-                to=''
-            >
+            <text className='order-sumary'>
                 Order Sumary
-            </Link>
+            </text>
             <div className='notes'>
                 <div>
                     <text>
@@ -51,6 +49,12 @@ function DesktopBuyBox({ subtotal }) {
                     </text>
                 </div>
             </div>
+            <Link
+                to="/bag-payment"
+                className='checkout_buttom'
+            >
+                Checkout
+            </Link>
         </div>
     )
 }
@@ -98,6 +102,13 @@ function MobileBuyBox({ subtotal }) {
                         </text>
                     </div>
                 </div>
+
+                <Link
+                    to="/bag-payment"
+                    className='checkout_buttom'
+                >
+                    Checkout
+                </Link>
             </div>
             <StepsBuy step={1} />
         </div>
@@ -113,7 +124,7 @@ function BuyBox2() {
     subtotal = subtotal.toFixed(2)
 
     return (
-        <section className='full'>
+        <section className='buy-box-2'>
             <DesktopBuyBox subtotal={subtotal} />
             <MobileBuyBox subtotal={subtotal} />
         </section>
