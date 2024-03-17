@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.83b15739.css",
-    "main.js": "/my-app/static/js/main.b421631c.js",
+    "main.css": "/my-app/static/css/main.2073518d.css",
+    "main.js": "/my-app/static/js/main.0c2dc5e7.js",
     "static/media/check-toggle.png": "/my-app/static/media/check-toggle.ba9169b1f4e33339d948.png",
     "index.html": "/my-app/index.html",
-    "main.83b15739.css.map": "/my-app/static/css/main.83b15739.css.map",
-    "main.b421631c.js.map": "/my-app/static/js/main.b421631c.js.map"
+    "main.2073518d.css.map": "/my-app/static/css/main.2073518d.css.map",
+    "main.0c2dc5e7.js.map": "/my-app/static/js/main.0c2dc5e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.83b15739.css",
-    "static/js/main.b421631c.js"
+    "static/css/main.2073518d.css",
+    "static/js/main.0c2dc5e7.js"
   ]
 }
