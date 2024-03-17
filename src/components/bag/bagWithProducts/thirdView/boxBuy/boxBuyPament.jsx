@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import StepsBuy from '../../stepsBuy/StepsBuy'
 import { Link } from "react-router-dom";
-import '../../secondView/style/desktop.css'
-import '../../secondView/style/mobile.css'
+import '../../secondView/buyBox/style/desktop.css'
+import '../../secondView/buyBox/style/mobile.css'
 import './style/desktop.css'
 import './style/mobile.css'
 
@@ -10,7 +10,7 @@ function DesktopBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2 buy-box-2-desktop">
             <StepsBuy step={2} />
-            <Link className='order-sumary-button'
+            <Link className='order-sumary'
                 to=''
             >
                 Order Sumary
