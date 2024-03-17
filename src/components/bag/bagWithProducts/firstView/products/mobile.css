@@ -1,14 +1,16 @@
 @media(max-width:800px) {
     .bag-item {
-        display: flex;
-        gap: 10px;
         width: 100%;
         max-width: 100%;
         /* background-color: pink; */
-        cursor: pointer;
-        color: black;
-        text-decoration: none;
-        height: 20vh;
+        transition-property: max-height;
+        max-height: 30vh;
+    }
+
+    .bag-item.delete {
+        height: auto;
+        max-height: 0px;
+        /* background-color: green; */
     }
 
 
@@ -19,7 +21,7 @@
         display: flex;
         place-content: center;
         place-items: center;
-        flex-grow: 1;
+        /* flex-grow: 1; */
     }
 
     .add-remove-button:hover {

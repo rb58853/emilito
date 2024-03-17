@@ -32,6 +32,10 @@ const routes = [
         element: <App content={<BagView step={2} />} />,
     },
     {
+        path: "/bag-payment",
+        element: <App content={<BagView step={3} />} />,
+    },
+    {
         path: "/about",
         element: <App content={<About />} />,
     },

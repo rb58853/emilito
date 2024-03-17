@@ -6,10 +6,6 @@ import ProductContainer from '../../Products/ProductContainer.jsx';
 import { Link } from "react-router-dom";
 
 function SerieButtom({ serie, setShowDropdown }) {
-  // let serieProducts = serie.products.map(product_key => {
-  //   return products[product_key]
-  // })
-
   return (
     <Link className='dropdown_item'
       to={"/serie-" + serie.key}

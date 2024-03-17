@@ -1,26 +1,20 @@
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 import StepsBuy from '../../stepsBuy/StepsBuy'
+import { Link } from "react-router-dom";
+import '../../secondView/style/desktop.css'
+import '../../secondView/style/mobile.css'
 import './style/desktop.css'
 import './style/mobile.css'
-import '../../../../../style/style.css'
-import { Link } from 'react-router-dom'
 
 function DesktopBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2 buy-box-2-desktop">
-            <StepsBuy step={1} />
-            <text className='order-sumary'>
+            <StepsBuy step={2} />
+            <Link className='order-sumary-button'
+                to=''
+            >
                 Order Sumary
-            </text>
-            <div className='notes'>
-                <div>
-                    <text>
-                        Notes or instructions (optional)
-                    </text>
-                    <input className="input-notes"
-                        type="text" />
-                </div>
-            </div>
+            </Link>
             <div className='pays-cost-space'>
                 <div className='row-cost'>
                     Subtotal:
@@ -49,12 +43,9 @@ function DesktopBuyBox({ subtotal }) {
                     </text>
                 </div>
             </div>
-            <Link
-                to="/bag-payment"
-                className='checkout_buttom'
-            >
-                Checkout
-            </Link>
+            <button className="paynow-button">
+                Pay Now
+            </button>
         </div>
     )
 }
@@ -63,13 +54,6 @@ function MobileBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2-mobile">
             <div className='full-box-2'>
-                <div className='notes'>
-                    <text>
-                        Notes or instructions (optional)
-                    </text>
-                    <input className="input-notes"
-                        type="text" />
-                </div>
                 <div className='pays-cost-space'>
                     <b>Order Sumary</b>
                     <div className='row-cost'>
@@ -103,19 +87,16 @@ function MobileBuyBox({ subtotal }) {
                     </div>
                 </div>
 
-                <Link
-                    to="/bag-payment"
-                    className='checkout_buttom'
-                >
-                    Checkout
-                </Link>
+                <button className="paynow-button">
+                    Pay Now
+                </button>
             </div>
-            <StepsBuy step={1} />
+            <StepsBuy step={2} />
         </div>
     )
 }
 
-function BuyBox2() {
+function BoxBuyPayment() {
     let subtotal = 0
     const bag = useSelector((state) => state.bag)
     Object.values(bag.products).forEach(item => {
@@ -129,7 +110,5 @@ function BuyBox2() {
             <MobileBuyBox subtotal={subtotal} />
         </section>
     )
-
-
 }
-export default BuyBox2
+export default BoxBuyPayment

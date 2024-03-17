@@ -42,6 +42,7 @@ function BuyDesktop({ price }) {
                     </div>
                     <Link className='continue_shopping_a' to="/">continue shopping</Link>
                 </div>
+                
                 <Link
                     to="/bag-details"
                     className='checkout_buttom'

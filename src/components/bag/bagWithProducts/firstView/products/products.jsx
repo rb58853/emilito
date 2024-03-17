@@ -42,7 +42,7 @@ function BagItem({ product, count, key }) {
 
                 <Link className='add-remove-item-space'>
                     <RemoveButton product={product} setWillDelete={setWillDelete} />
-                    <TextProductCount product={product} selfCount={count} setWillDelete={setWillDelete}/>
+                    <TextProductCount product={product} selfCount={count} setWillDelete={setWillDelete} willDelete={willDelete}/>
                     <AddButton product={product} />
                 </Link>
             </div>
@@ -91,7 +91,7 @@ function RemoveButton({ product, setWillDelete }) {
     >–</button>
 }
 
-function TextProductCount({ product, selfCount, setWillDelete }) {
+function TextProductCount({ product, selfCount, setWillDelete, willDelete }) {
     const dispatch = useDispatch();
     const inputRef = useRef();
     const [inChangeCount, setInChangeCount] = useState(false)
@@ -125,7 +125,7 @@ function TextProductCount({ product, selfCount, setWillDelete }) {
             <text
                 className={`item-count-text ${inChangeCount ? 'hide' : ''}`}
             >
-                {selfCount}
+                {`${!willDelete?selfCount:"0"}`}
             </text>
 
             <input

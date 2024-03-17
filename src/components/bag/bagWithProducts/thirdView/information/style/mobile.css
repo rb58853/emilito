@@ -1,0 +1,8 @@
+@media(max-width:800px) {
+    .info-payment {
+        /* background-color: rgb(255, 255, 255); */
+        width: 100%;
+        max-width: 100%;
+        flex-grow: 1;
+    }
+}

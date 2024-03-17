@@ -44,6 +44,29 @@ html {
 a {
   font-family: 'Montserrat', sans-serif;
 }
+
 button {
   font-family: 'Montserrat', sans-serif;
+}
+
+.toggle {
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+  aspect-ratio: 1/1;
+  height: 80%;
+  border: none;
+  border-radius: 50%;
+  background-image: url(./images/check-toggle.png);
+  background-size: 0%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition-property: background-size;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  
+}
+.toggle:checked {
+  background-size: 50%;
 }

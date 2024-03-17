@@ -13,7 +13,7 @@
 
 .links{
     display: flex;
-    gap: 20px;
+    gap: min(100px);
 }
 .links>* {
     text-decoration: none;
