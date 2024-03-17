@@ -16,6 +16,7 @@
 }
 
 .order-sumary {
+    cursor:auto;
     font-size: 120%;
     width: 100%;
     background-color: white;
