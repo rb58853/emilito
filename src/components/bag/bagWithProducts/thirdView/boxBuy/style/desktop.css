@@ -1,5 +1,5 @@
 .paynow-button {
-    background-color: black;
+    background-color: rgb(40, 40, 40);
     color: white;
     border: none;
     width: fit-content;
@@ -9,15 +9,16 @@
     width: min(220px,80%);    
     font-size: 150%;
     border-radius: 50px;
+    margin-top: 20px;
     cursor: pointer;
-    transition-property: background-color, color, font-size;
+    transition-property: background-color, color,  transform;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
 }
 
 .paynow-button:hover {
     color: rgb(255, 255, 255);
-    font-size: 160%;
-    background-color: rgb(60, 60, 60);
+    transform: scale(1.1);
+    background-color: black;
 
 }

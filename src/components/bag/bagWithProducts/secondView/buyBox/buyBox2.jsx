@@ -17,8 +17,7 @@ function DesktopBuyBox({ subtotal }) {
                     <text>
                         Notes or instructions (optional)
                     </text>
-                    <input className="input-notes"
-                        type="text" />
+                    <textarea className="input-notes" />
                 </div>
             </div>
             <div className='pays-cost-space'>
@@ -67,8 +66,7 @@ function MobileBuyBox({ subtotal }) {
                     <text>
                         Notes or instructions (optional)
                     </text>
-                    <input className="input-notes"
-                        type="text" />
+                    <textarea className="input-notes" />
                 </div>
                 <div className='pays-cost-space'>
                     <b>Order Sumary</b>
