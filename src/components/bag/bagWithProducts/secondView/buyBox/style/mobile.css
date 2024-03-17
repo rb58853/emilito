@@ -19,7 +19,10 @@
     }
 
     .input-notes {
-        border-radius: 13px;
+        /* -webkit-border-radius: 5px; 
+        -moz-border-radius: 5px;  */
+        border-radius: 7px; /* Para los navegadores modernos */
+
         width: 99%;
     }
 

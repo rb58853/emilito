@@ -55,8 +55,8 @@
 
 .full_step_buy{
     /* background-color: yellow; */
-    max-width: 4vh;
-    max-height: 4vh;
+    max-width: 40px;
+    max-height: 40px;
     height: 40px;
     display: flex;
     flex-direction: column;
