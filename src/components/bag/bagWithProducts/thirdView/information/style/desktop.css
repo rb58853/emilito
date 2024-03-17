@@ -1,6 +1,8 @@
 .info-payment {
-    background-color: rgb(255, 255, 255);
-    width: 50%;
+    /* background-color: rgb(255, 255, 255); */
+    width: 100%;
+    max-width: min(50%,800px);
+    flex-grow: 1;
     /* height: 100px; */
 
 }
@@ -40,7 +42,7 @@
 }
 
 .info-payment-set {
-    background-color: rgba(165, 42, 42, 0.136);
+    /* background-color: rgba(165, 42, 42, 0.136); */
     margin-top: min(50px, 20%);
 }
 
@@ -51,7 +53,7 @@
 .toggle-space {
     display: flex;
     place-items: center;
-    background-color: rgba(0, 0, 255, 0.288);
+    /* background-color: rgba(0, 0, 255, 0.288); */
     width: fit-content;
     height: 20px;
 }

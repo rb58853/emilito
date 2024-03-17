@@ -9,5 +9,8 @@
 .bag-payment{
     width: 100%;
     height: 100%;
-    /* background-color: rgba(128, 255, 0, 0.323); */
+    display: flex;
+    place-content: center;
+    place-items: center;
+    background-color: rgba(128, 255, 0, 0.323);
 }

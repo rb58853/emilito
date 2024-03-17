@@ -1,6 +1,7 @@
 import '../../../../style/style.css'
 import './style/desktop.css'
 import InformationPayment from './information/information-pyment'
+import BoxBuyPayment from './boxBuy/boxBuyPament'
 
 function PaymentBagView() {
     return (
@@ -9,7 +10,8 @@ function PaymentBagView() {
                 Payment
             </text>
             <div className='bag-payment'>
-                <InformationPayment/>
+                <InformationPayment />
+                <BoxBuyPayment />
             </div>
         </section>
     )
