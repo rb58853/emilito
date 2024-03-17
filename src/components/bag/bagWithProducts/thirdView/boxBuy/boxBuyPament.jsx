@@ -15,7 +15,7 @@ function DesktopBuyBox({ subtotal }) {
             >
                 Order Sumary
             </Link>
-            <div className='pays-cost-space'>
+            <div className='pays-cost-space-payment'>
                 <div className='row-cost'>
                     Subtotal:
                     <text>
@@ -54,7 +54,7 @@ function MobileBuyBox({ subtotal }) {
     return (
         <div className="buy-box-2-mobile">
             <div className='full-box-2'>
-                <div className='pays-cost-space'>
+                <div className='pays-cost-space-payment'>
                     <b>Order Sumary</b>
                     <div className='row-cost'>
                         Subtotal:
