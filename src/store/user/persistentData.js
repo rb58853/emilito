@@ -2,7 +2,7 @@ const initialUser = {
     'country': '',
     'name': '',
     'last_name': '',
-    'email': 'useremail@gmail.com',
+    'email': '',
     'city': '',
     'address': '',
     'apartament_number': '',
