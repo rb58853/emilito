@@ -14,14 +14,15 @@
     }
 
     .paynow-button:hover {
-        background-color: black;
+        background-color: rgb(40, 40, 40);
         color: white;
         font-size: 150%;
+        transform: scale(1);
     }
 
     .paynow-button:active {
         color: rgb(255, 255, 255);
         /* font-size: 160%; */
-        background-color: rgb(60, 60, 60);
+        background-color: rgb(80, 80, 80);
     }
 }

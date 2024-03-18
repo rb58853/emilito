@@ -72,5 +72,6 @@
 }
 .shipping-row.short{
     min-width: min(400px,100%);
-    width: 80%;
+    max-width: max(600px,80%);
+    width: 100%;
 }

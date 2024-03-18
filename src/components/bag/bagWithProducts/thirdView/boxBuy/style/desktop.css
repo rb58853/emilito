@@ -22,3 +22,13 @@
     background-color: black;
 
 }
+.pays-cost-space-payment{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: white;
+
+}
