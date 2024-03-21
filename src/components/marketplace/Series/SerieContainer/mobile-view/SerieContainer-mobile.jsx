@@ -77,29 +77,19 @@ function SerieContainerMobile({ items }) {
 
   return <div className='serie-container-mobile'>
     <div className='box-serie-container-mobile'>
-      <div
-        className='box-serie-mobile'
-        ref={seriesRef}
+        <div
+          className='box-serie-mobile'
+          ref={seriesRef}
 
-        onTouchStart={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
-        onTouchEnd={(e) => { ChangeSerieWithScroll(e, series) }}
-      >
-        {series}
-      </div>
-
-      {/* <button className='right-button'
-        onClick={() => Next(series)}
-      >
-        {"❱"}
-      </button>
-      <button className='left-button'
-        onClick={() => {
-          Back(series)
-        }} >
-
-        {"❰"}
-      </button> */}
-
+          onTouchStart={(e) => { setLastDeltaX(e.currentTarget.scrollLeft) }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+        // onTouchEnd={(e) => { ChangeSerieWithScroll(e, series) }}
+        >
+          {series}
+        </div>
     </div>
 
     <div className='points-space'>

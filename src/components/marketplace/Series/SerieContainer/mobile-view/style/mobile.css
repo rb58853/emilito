@@ -25,7 +25,8 @@
         gap: 10px;
         cursor: pointer;
 
-        
+        overscroll-behavior-x: none;
+
         /*Oculatar las barras de scroll*/
         /* IE y Edge */
         -ms-overflow-style: none;
