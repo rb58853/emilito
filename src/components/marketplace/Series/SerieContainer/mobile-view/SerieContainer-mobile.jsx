@@ -32,7 +32,7 @@ function Point({ index }) {
 
         className={`point ${(index == currentSerie) ? 'highlight' : ""}`}
 
-        src={(index == currentSerie) ? "images/icons/Black_Circle.png" : "images/icons/White_Circle.png"} alt="" />
+        src={(index == currentSerie) ? process.env.PUBLIC_URL +"images/icons/Black_Circle.png" : process.env.PUBLIC_URL +"images/icons/White_Circle.png"} alt="" />
     </div>
   )
 }

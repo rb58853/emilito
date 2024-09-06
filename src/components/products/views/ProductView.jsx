@@ -35,7 +35,7 @@ function Point({ index, current_image, set_current, set_last }) {
 
                 className={`point ${(highlight || index == current_image) ? 'highlight' : ""}`}
 
-                src={(highlight || index == current_image) ? "images/icons/Black_Circle.png" : "images/icons/White_Circle.png"} alt="" />
+                src={(highlight || index == current_image) ? process.env.PUBLIC_URL + "images/icons/Black_Circle.png" : process.env.PUBLIC_URL + "images/icons/White_Circle.png"} alt="" />
         </div>
     )
 }
@@ -53,12 +53,12 @@ function ImageComponent({ product }) {
             <div className='image_container_view'>
                 <img id='current'
                     className='image_view'
-                    src={images[current_image]}
+                    src={process.env.PUBLIC_URL + images[current_image]}
                     alt="" />
 
                 <img id='last'
                     className='image_view_hide'
-                    src={images[last_image]}
+                    src={process.env.PUBLIC_URL + images[last_image]}
                     alt="" />
 
 

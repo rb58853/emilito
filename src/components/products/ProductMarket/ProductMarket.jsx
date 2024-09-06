@@ -13,7 +13,7 @@ function ProductMarket({ product }) {
             to={"/"+product.key}
         >
             <div className='image_container'>
-                <img className='image' src={product.image} alt="" />
+                <img className='image' src={process.env.PUBLIC_URL +product.image} alt="" />
             </div>
             <div className={`info_container ${zoom ? 'show' : ''}`}>
                 <text> {product.name} </text>

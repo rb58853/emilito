@@ -9,7 +9,7 @@ function About() {
         </text>
         <img
             className='artist-image'
-            src="/images/others/artist.png"
+            src={process.env.PUBLIC_URL + "/images/others/artist.png"}
             alt="" />
         <p>
             In my artistic production I am interested in representing and exposing my reflections on issues related to art itself and to the artist himself. With the commodification and consumerism of the world, of life and of everything that surrounds us; The language of art has been losing its founding and nominative condition to acquire a merely instrumental function. Facing issues such as technical reproducibility that calls into question the concept of aura.

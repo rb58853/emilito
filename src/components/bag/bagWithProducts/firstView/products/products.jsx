@@ -32,7 +32,7 @@ function BagItem({ product, count, key }) {
         >
             <div className='bag-item-image-container'>
                 <img className='bag-item-image'
-                    src={product.image}
+                    src={process.env.PUBLIC_URL +product.image}
                     alt="" />
             </div>
 
