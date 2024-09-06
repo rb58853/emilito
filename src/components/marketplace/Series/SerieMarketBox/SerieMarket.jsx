@@ -14,7 +14,7 @@ function SerieMarket({serie, ref, key} ) {
             to={'/serie-'+serie.key}
         >
             <div className='serie_image_container'>
-                <img className='image' src={serie.image} alt="" />
+                <img className='image' src={ process.env.PUBLIC_URL +serie.image} alt="" />
             </div>
             <div className={`serie_info_container ${zoom ? 'show' : ''}`}>
                 <p> {serie.name} </p>

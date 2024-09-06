@@ -39,7 +39,7 @@ function Scrollable() {
             <div className='scrollable_BagView'
                 onScroll={handleScroll}
             >
-                <Products/>
+                <Products />
             </div>
         </div>
     );

@@ -32,7 +32,7 @@ function BagItem({ product, count, key }) {
         >
             <div className='bag-item-image-container'>
                 <img className='bag-item-image'
-                    src={process.env.PUBLIC_URL +product.image}
+                    src={process.env.PUBLIC_URL + product.image}
                     alt="" />
             </div>
 
@@ -42,7 +42,7 @@ function BagItem({ product, count, key }) {
 
                 <Link className='add-remove-item-space'>
                     <RemoveButton product={product} setWillDelete={setWillDelete} />
-                    <TextProductCount product={product} selfCount={count} setWillDelete={setWillDelete} willDelete={willDelete}/>
+                    <TextProductCount product={product} selfCount={count} setWillDelete={setWillDelete} willDelete={willDelete} />
                     <AddButton product={product} />
                 </Link>
             </div>
@@ -125,7 +125,7 @@ function TextProductCount({ product, selfCount, setWillDelete, willDelete }) {
             <text
                 className={`item-count-text ${inChangeCount ? 'hide' : ''}`}
             >
-                {`${!willDelete?selfCount:"0"}`}
+                {`${!willDelete ? selfCount : "0"}`}
             </text>
 
             <input

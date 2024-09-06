@@ -13,7 +13,7 @@ function ShopBar() {
                 <Link to="/bag">
                     <div className='shop-button-bottom-bar'>
                         <img className='shop-image-bottom-bar' src="images/icons/shop.png" />
-                        {!bag.empty && <img className='red-point-bottom-bar' src="images/icons/red.png" />}
+                        {!bag.empty && <img className='red-point-bottom-bar' src={process.env.PUBLIC_URL + "/images/icons/red.png"} />}
                     </div>
                 </Link>
             </div>
