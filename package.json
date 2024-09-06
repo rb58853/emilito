@@ -1,7 +1,7 @@
 {
-  "name": "my-app",
+  "name": "emilito",
   "version": "0.1.0",
-  "homepage": "https://rb58853.github.io/my-app",
+  "homepage": "https://rb58853.github.io/emilito",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
