@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.2073518d.css",
-    "main.js": "/my-app/static/js/main.0c2dc5e7.js",
-    "static/media/check-toggle.png": "/my-app/static/media/check-toggle.ba9169b1f4e33339d948.png",
-    "index.html": "/my-app/index.html",
-    "main.2073518d.css.map": "/my-app/static/css/main.2073518d.css.map",
-    "main.0c2dc5e7.js.map": "/my-app/static/js/main.0c2dc5e7.js.map"
+    "main.css": "/emilito/static/css/main.55aa8af5.css",
+    "main.js": "/emilito/static/js/main.59b6eefa.js",
+    "static/media/check-toggle.png": "/emilito/static/media/check-toggle.ba9169b1f4e33339d948.png",
+    "index.html": "/emilito/index.html",
+    "main.55aa8af5.css.map": "/emilito/static/css/main.55aa8af5.css.map",
+    "main.59b6eefa.js.map": "/emilito/static/js/main.59b6eefa.js.map"
   },
   "entrypoints": [
-    "static/css/main.2073518d.css",
-    "static/js/main.0c2dc5e7.js"
+    "static/css/main.55aa8af5.css",
+    "static/js/main.59b6eefa.js"
   ]
 }
